@@ -17,6 +17,33 @@
 
   </head>
 
+  <style type="text/css" media="screen">
+*  {
+	margin:0;
+	padding:0;
+}
+
+html, body {height:100%;}
+
+.geral {
+	min-height:100%;
+	position:relative;
+	width:800px;
+}
+
+.footer {
+	position:absolute;
+	bottom:0;
+	width:100%;
+}
+
+.content {overflow:hidden;}
+.aside {width:200px;}
+.fleft {float:left;}
+.fright {float:right;}
+
+</style>
+  
   <body>
 	<?php
 		unset($_SESSION['utilizadorIdTecnico'], 			
@@ -31,7 +58,10 @@
 	?>
     <div class="container">		
       <form class="form-signin" method="POST" action="valida_login.php">
-        <h2 class="form-signin-heading text-center">Câmara Municipal Celorico da Beira</h2>
+		&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+		<img class="form-signin-heading text-center" src="imagens/Celorico_Logo_150.png">
+        <!--<h4 class="form-signin-heading text-center">Câmara Municipal Celorico da Beira</h4> -->
+		<p><font face="verdana" class="form-signin-heading text-center" size="3">Câmara Municipal Celorico da Beira</font></p>
         <label for="inputEmail" class="sr-only">Utilizador</label>
 		
         <input type="text" name="utilizador" class="form-control" placeholder="Utilizador" required autofocus><br />
@@ -39,7 +69,9 @@
         <label for="inputPassword" class="sr-only">Password</label>
         <input type="password" name="password" class="form-control" placeholder="Password" required >
         
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+		<!--<button class="btn btn-secondary my-2 my-sm-0"  type="submit">Login</button>
+		<button type="button" class="btn btn-primary">Login</button> -->
+        <button class="btn btn btn-primary btn-block" type="submit">Login</button>
       </form>
 		<p class="text-center text-danger">
 			<?php
@@ -54,5 +86,16 @@
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="js/ie10-viewport-bug-workaround.js"></script>
+	
+	
+<!--Rodapé -->
+<div class="content">
+	<div class="footer">
+		<font class="footer text-left"  face="Brush Script">©Cristiana Gabriel</font>
+		<font class="footer text-center" face="Brush Script">|| Projeto em Contexto de Estágio ||</font>
+		<font class="footer text-right" face="Brush Script">Engenharia Informática - IPG</font>
+	</div>
+</div>
+
   </body>
 </html>
