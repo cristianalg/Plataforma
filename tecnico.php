@@ -16,6 +16,7 @@ include_once("seguranca.php");
     <link href="css/bootstrap-theme.min.css" rel="stylesheet">
     <link href="css/theme.css" rel="stylesheet">
     <script src="js/ie-emulation-modes-warning.js"></script->
+	
   </head>
 
   <body role="document">
@@ -26,60 +27,61 @@ include_once("seguranca.php");
       <div class="page-header">
         <h1>Inserir Técnico</h1>
       </div>
+	  <p><font color="red" size="4">*</font> <font size="2">Campos de preenchimento obrigatório </font></p>
       <div class="row">
         <div class="col-md-12">
-          <form class="form-horizontal" method="POST" action="processa/inserir_Tecnico.php"> 
+          <form class="form-horizontal" method="POST" action="tecnico_Inserir.php"> 
 			  <div class="form-group">
-				<label for="inputEmail3" class="col-sm-2 control-label">Nome</label>
+				<label for="inputEmail3" class="col-sm-2 control-label">Nome<font color="red" size="4">&nbsp*</font></label>
 				<div class="col-sm-10">
 				  <input type="text" class="form-control" name="nome" placeholder="Nome">
 				</div>
 			  </div>
 			  
 			  <div class="form-group">
-				<label for="inputEmail3" class="col-sm-2 control-label">Apelido</label>
+				<label for="inputEmail3" class="col-sm-2 control-label">Apelido<font color="red" size="4">&nbsp*</font></label>
 				<div class="col-sm-10">
-				  <input type="text" class="form-control" name="nome" placeholder="Apelido">
+				  <input type="text" class="form-control" name="apelido" placeholder="Apelido">
 				</div>
 			  </div>
 			  
 			  <div class="form-group">
-				<label for="inputEmail3" class="col-sm-2 control-label">Número de Funcionário</label>
+				<label for="inputEmail3" class="col-sm-2 control-label">Nº Funcionário<font color="red" size="4">&nbsp*</font></label>
 				<div class="col-sm-10">
-				  <input type="text" class="form-control" name="nome" placeholder="Número de Funcionário">
+				  <input type="text" class="form-control" name="numero_funcionario" placeholder="Número de Funcionário">
 				</div>
 			  </div>
 			  
 			  <div class="form-group">
-				<label for="inputEmail3" class="col-sm-2 control-label">E-mail</label>
+				<label for="inputEmail3" class="col-sm-2 control-label">E-mail<font color="red" size="4">&nbsp*</font></label>
 				<div class="col-sm-10">
 				  <input type="email" class="form-control" name="email" placeholder="email@example.com">
 				</div>
 			  </div>
 			  
 			  <div class="form-group">
-				<label for="inputEmail3" class="col-sm-2 control-label">Contacto</label>
+				<label for="inputEmail3" class="col-sm-2 control-label">Contacto<font color="red" size="4">&nbsp*</font></label>
 				<div class="col-sm-10">
 				  <input type="text" class="form-control" name="contacto" placeholder="Contacto">
 				</div>
 			  </div>
 			  
 			 <div class="form-group">
-				<label for="inputEmail3" class="col-sm-2 control-label">Função</label>
+				<label for="inputEmail3" class="col-sm-2 control-label">Função<font color="red" size="4">&nbsp*</font></label>
 				<div class="col-sm-10">
 				  <input type="text" class="form-control" name="funcao" placeholder="Função">
 				</div>
 			  </div>  
 		    
 			  <div class="form-group">
-				<label for="inputPassword3" class="col-sm-2 control-label">User</label>
+				<label for="inputPassword3" class="col-sm-2 control-label">User<font color="red" size="4">&nbsp*</font></label>
 				<div class="col-sm-10">
 				  <input type="password" class="form-control" name="user" placeholder="@User">
 				</div>
 			  </div>
 			  
 			  <div class="form-group">
-				<label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+				<label for="inputPassword3" class="col-sm-2 control-label">Password<font color="red" size="4">&nbsp*</font></label>
 				<div class="col-sm-10">
 				  <input type="password" class="form-control" name="password" placeholder="Password">
 				</div>
@@ -88,7 +90,7 @@ include_once("seguranca.php");
 			    <div class="form-group">
 				<label for="inputPassword3" class="col-sm-2 control-label">Observação</label>
 				<div class="col-sm-10">
-				   <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+				   <textarea class="form-control" id="observacao_tecnico" rows="3" name="observacao_tecnico"></textarea>
 				</div>
 			  </div>
 			  
@@ -102,7 +104,7 @@ include_once("seguranca.php");
 		</div>
     </div> <!-- /container -->
 
-
+	
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
@@ -111,5 +113,8 @@ include_once("seguranca.php");
     <script src="js/docs.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="js/ie10-viewport-bug-workaround.js"></script>
+	
+	
+
   </body>
 </html>

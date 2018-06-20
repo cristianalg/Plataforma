@@ -4,6 +4,9 @@
     
   <link rel="stylesheet" href="dist/css/bootstrap-submenu.css">
   <script src="dist/js/bootstrap-submenu.js" defer></script>
+  
+
+	<!--Rodapé-->
 <style type="text/css" media="screen">
 *  {
 	margin:0;
@@ -28,30 +31,7 @@ html, body {height:100%;}
 .aside {width:200px;}
 .fleft {float:left;}
 .fright {float:right;}
-
-
-
-
-<!--
-.dropdown-submenu {
-    position:static;
-}
-.dropdown-submenu>.dropdown-menu {
-    margin:0;
-}
-
-.nav ul li ul li ul {
-  position: absolute;
-  top: -26px !important;
-} -->
-
-.dropdown-submenu:hover>a {
-    background: red;
-}
-
-
 </style>
-
 </head>
 
 <!-- Inicio navbar -->
@@ -74,7 +54,7 @@ html, body {height:100%;}
 		<li class="dropdown">
 		  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">TABELAS <span class="caret"></span></a>
 		  <ul class="dropdown-menu">
-			  <li><a href="listar_tecnico.php">TÉCNICOS</a></li>
+			  <li><a href="tecnico_Listar.php">TÉCNICOS</a></li>
 			  <li class="divider"></li>
 			  <li><a href="teste_Inicio.php">REQUERENTES</a></li> 
 			  <li><a href="teste_Inicio.php">  &nbsp Tipo de requerente</a></li>
@@ -136,8 +116,7 @@ html, body {height:100%;}
 </nav>
 <!-- Fim navbar -->
 
-
-<!--Rodapé -->
+  <!--Rodapé -->
 <div class="content">
 	<div class="footer">
 		<font class="footer text-left"  face="Brush Script">©Cristiana Gabriel</font>
@@ -145,4 +124,5 @@ html, body {height:100%;}
 		<font class="footer text-right" face="Brush Script">Engenharia Informática - IPG</font>
 	</div>
 </div>
+	
 </html>
