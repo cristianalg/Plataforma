@@ -8,12 +8,13 @@ $apelido 				= $_POST["apelido"];
 $numero_funcionario		= $_POST["numero_funcionario"];
 $email 					= $_POST["email"];
 $contacto 				= $_POST["contacto"];
+$funcao 				= $_POST["funcao"];
 $user 					= $_POST["user"];
 $password 				= $_POST["password"];
 $observacao_tecnico 	= $_POST["observacao_tecnico"];
 
 
-// if($nome == "" || $apelido == "" || $numero_funcionario == "" || $email == "" || $contacto == "" || $user == "" || $password == "")
+// if($nome == "" || $apelido == "" || $numero_funcionario == "" || $email == "" || $contacto == "" || $funcao == "" ||$user == "" || $password == "")
 // {
 // echo "<script language='javascript' type='text/javascript' text-align:'center' > 
   // alert('Os campos com (*) são de preenchimento obrigatório.'); 

@@ -65,7 +65,7 @@
       <div class="page-header">
         <h1>Lista dos Técnicos
 		&nbsp
-		 <a href="tecnico.php"><img src="imagens/add1.ico" width="30px"></a>
+		 <a href="tecnico_Inserir_Formulario.php"><img src="imagens/add1.ico" width="30px"></a>
 		</h1>
       </div>
 	  
@@ -92,20 +92,27 @@
 							echo "<td>".$linhas['Email']."</td>";
 							echo "<td>".$linhas['Contacto']."</td>";
 							echo "<td>".$linhas['Funcao']."</td>";
-							echo "
+							?>
+							
 							<td> 
-							<a href='#'><button type='button' class='btn btn-sm btn-primary'>Visualizar</button></a>
-							<a href='#'><button type='button' class='btn btn-sm btn-warning'>Editar</button></a>
-							<a href='#'><button type='button' class='btn btn-sm btn-danger'>Apagar</button></a>
 							
-							<a href='#'><img src='imagens/info.ico' width='30px'></a>
-							<a href='#'><img src='imagens/edit.ico' width='30px'></a>
+							<a href='tecnico_Visualizar.php?id=<?php echo $linhas['idTecnico']; ?>'><img src='imagens/info.ico' width='30px'></a>
+							<a href='tecnico_Editar_Formulario.php?id=<?php echo $linhas['idTecnico']; ?>'><img src='imagens/edit.ico' width='30px'></a>
 							<a href='#'><img src='imagens/edit_delete.png' width='30px'></a>
-							
-							</td>";
+							<?php
 						echo "</tr>";
 					}
 				?>
+				
+				<!--<a href='#'><button type='button' class='btn btn-sm btn-primary'>Visualizar</button></a>
+							<a href='#'><button type='button' class='btn btn-sm btn-warning'>Editar</button></a>
+							<a href='#'><button type='button' class='btn btn-sm btn-danger'>Apagar</button></a>
+
+							<a href='#'><img src='imagens/info.ico' width='30px'>Visualizar</a>
+							<a href='tecnico_Editar_Formulario.php'><img src='imagens/edit.ico' width='30px'></a>
+							<a href='#'><img src='imagens/edit_delete.png' width='30px'></a>
+							-->
+							
             </tbody>
           </table>
         </div>
@@ -119,7 +126,7 @@
 
 	
 	
-	
+	<!--
 	
 <div class="container">
 	<div class="row">
@@ -172,7 +179,7 @@
 
     
 
-
+-->
 
 	
 	

@@ -56,6 +56,7 @@ html, body {height:100%;}
 			  $_SESSION['utilizadorUser'],			
 			  $_SESSION['utilizadorPassword']);
 	?>
+	<br><br><br>
     <div class="container">		
       <form class="form-signin" method="POST" action="valida_login.php">
 		&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
