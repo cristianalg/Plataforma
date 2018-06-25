@@ -35,11 +35,9 @@ include_once("conexao.php");
 	
 	 <div class="row">
 		<div class="pull-right">
-			<a href='tecnico_Listar.php?id=<?php echo $resultado['idTecnico']; ?>'><button type='button' class='btn btn-sm btn-info'>Listar</button></a>
-							
+			<a href='tecnico_Listar.php?id=<?php echo $resultado['idTecnico']; ?>'><img src="imagens/list.png" width="30px"></a></a>
 			<a href='tecnico_Editar_Formulario.php?id=<?php echo $resultado['idTecnico']; ?>'><img src="imagens/edit.ico" width="30px"></a></a>
-			
-			<!-- <a href='processa/proc_apagar_usuario.php?id=<?php echo $resultado['idTecnico']; ?>'><button type='button' class='btn btn-sm btn-danger'>Apagar</button></a>  -->
+			<a href='tecnico_Eliminar.php?id=<?php echo $resultado['idTecnico']; ?>'><img src='imagens/edit_delete.png' width='30px'></a>
 		</div>
 	</div> 
 	

@@ -36,10 +36,10 @@ if (mysql_affected_rows() != 0 ){
 				
 				<script type=\"text/javascript\">
 				alert('Não alterou nenhum campo!'); 
-				 window.location.replace('tecnico_Listar.php'); </script>
+				window.location.replace('tecnico_Listar.php'); </script>
 				</script>
 			";		   
 
 		}
-		mysql_query($query) OR DIE(mysql_error());
+		//mysql_query($query) OR DIE(mysql_error());
 ?>

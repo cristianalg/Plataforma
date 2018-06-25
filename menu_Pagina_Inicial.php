@@ -22,7 +22,7 @@ html, body {height:100%;}
 }
 
 .footer {
-	position:absolute;
+	position:fixed;
 	bottom:0;
 	width:100%;
 }
@@ -31,6 +31,7 @@ html, body {height:100%;}
 .aside {width:200px;}
 .fleft {float:left;}
 .fright {float:right;}
+
 </style>
 </head>
 
