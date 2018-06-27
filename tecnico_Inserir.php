@@ -66,7 +66,7 @@ if($nome == "" || $apelido == "" || $numero_funcionario == "" || $email == "" ||
 	   $_SESSION['post_data']=NULL;
 	   //session_destroy();
 		echo "<script language='javascript' type='text/javascript' text-align:'center' > 
-  alert('Técnico nao inserido!'); 
+  alert('Técnico não inserido!'); 
   window.location.replace('tecnico_Listar.php'); </script>";
     }
 	

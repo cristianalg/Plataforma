@@ -4,7 +4,7 @@ include_once("seguranca.php");
 include_once("conexao.php");
 $id = $_GET["id"];
 
-$query = "DELETE FROM tecnico WHERE idTecnico = $id";
+$query = "DELETE FROM tipo_requerente WHERE idTipo_Requerente = $id";
 $resultado = mysql_query($query);
 $linhas = mysql_affected_rows();
 
@@ -21,8 +21,8 @@ $linhas = mysql_affected_rows();
 		if (mysql_affected_rows() != 0 ){	
 			echo "
 				<script type=\"text/javascript\">
-						alert('Técnico removido com sucesso!'); 
-						 window.location.replace('tecnico_Listar.php'); </script>
+						alert('Removido com sucesso!'); 
+						 window.location.replace('tipo_Requerente_Listar.php'); </script>
 				</script>
 			";	
 				
@@ -31,8 +31,8 @@ $linhas = mysql_affected_rows();
 		 else{ 	
 				echo "
 				<script type=\"text/javascript\">
-						alert('Técnico não removido!'); 
-						 window.location.replace('tecnico_Listar.php'); </script>
+						alert('Não removido!'); 
+						 window.location.replace('tipo_Requerente_Listar.php'); </script>
 				</script>
 			";		   
 

@@ -4,7 +4,7 @@ include_once("seguranca.php");
 include_once("conexao.php");
 include_once("menu_Pagina_Inicial.php");
  // $connect = mysqli_connect("localhost", "root", "", "testing");  
- $query ="SELECT * FROM tecnico ORDER BY IdTecnico DESC";  
+ $query ="SELECT * FROM requerente ORDER BY idRequerente DESC";  
  $resultado = mysql_query($query);  
  
  ?>  
@@ -17,7 +17,7 @@ include_once("menu_Pagina_Inicial.php");
 		<meta name="description" content="Página Inicial">
 		<meta name="author" content="Cristiana">
 
-		<title>Técnicos</title>
+		<title>Requerentes</title>
 		<link href="css/bootstrap.min.css" rel="stylesheet">
 		<link href="css/bootstrap-theme.min.css" rel="stylesheet">
 		<link href="css/theme.css" rel="stylesheet">
@@ -33,9 +33,9 @@ include_once("menu_Pagina_Inicial.php");
         <div class="container">  
             <div>
 			<!--<div class="page-header">-->
-				<h1>Lista dos Técnicos
+				<h1>Lista dos Requerentes
 				&nbsp
-				<a href="tecnico_Inserir_Formulario.php"><img src="imagens/add1.ico" width="30px"></a>
+				<a href="requerente_Inserir_Formulario.php"><img src="imagens/add1.ico" width="30px"></a>
 				</h1>
 			</div> 
             <div class="table-responsive">  
@@ -43,31 +43,45 @@ include_once("menu_Pagina_Inicial.php");
                      <thead>  
                          <tr>  
 							<th>ID</th>
-							<th>Nº Funcionário</th>
 							<th>Nome</th>
+							<th>Nº Funcionário</th>
+							<th>Tipo de Requerente</th>
 							<th>E-mail</th>
 							<th>Contacto</th>
-							<th>Função</th>
 							<th>Ações</th>
                         </tr>  
                     </thead>  
                  
 						
 				  <?php 
+				  $sem = "sem número";
 					while($linhas = mysql_fetch_array($resultado)){
 						echo "<tr>";
-							echo "<td>".$linhas['idTecnico']."</td>";
-							echo "<td>".$linhas['Numero_Funcionario']."</td>";
-							echo "<td>".$linhas['Nome']."</td>";
+							echo "<td>".$linhas['idRequerente']."</td>";
+							echo "<td>".$linhas['Nome_Requerente']."</td>";
+							
+							if($linhas['Numero_Funcionario'] == 0){
+								echo "<td>".$sem. "</td>";
+							}else{
+								echo "<td>".$linhas['Numero_Funcionario']."</td>";
+							}
+							
+							//echo "<td>".$linhas['Tipo_Requerente_idTipo_Requerente']."</td>";
+							$result_cat =mysql_query("SELECT Nome_Tipo_Requerente FROM tipo_requerente INNER JOIN 
+							requerente ON tipo_Requerente.idTipo_Requerente = requerente.Tipo_Requerente_idTipo_Requerente where requerente.idRequerente = ".$linhas['idRequerente'].";");
+							while($dados = mysql_fetch_assoc($result_cat)){
+								echo "<td>".$dados['Nome_Tipo_Requerente']."</td>";
+							}
 							echo "<td>".$linhas['Email']."</td>";
-							echo "<td>".$linhas['Contacto']."</td>";
-							echo "<td>".$linhas['Funcao']."</td>";
-							?>
+							echo "<td>".$linhas['Contacto_Requerente']."</td>";
+							
+							
+						?>
 							
 							<td> 
-							<a href='tecnico_Visualizar.php?id=<?php echo $linhas['idTecnico']; ?>'><img src='imagens/info.ico' width='30px'></a>
-							<a href='tecnico_Editar_Formulario.php?id=<?php echo $linhas['idTecnico']; ?>'><img src='imagens/edit.ico' width='30px'></a>
-							<a href="#" onclick="javascript: if (confirm('Deseja remover este registo?'))location.href='tecnico_Eliminar.php?id=<?php echo $linhas['idTecnico']; ?>'"><img src='imagens/edit_delete.png' width='30px'></a>
+							<a href='requerente_Visualizar.php?id=<?php echo $linhas['idRequerente']; ?>'><img src='imagens/info.ico' width='30px'></a>
+							<a href='requerente_Editar_Formulario.php?id=<?php echo $linhas['idRequerente']; ?>'><img src='imagens/edit.ico' width='30px'></a>
+							<a href="#" onclick="javascript: if (confirm('Deseja remover este registo?'))location.href='requerente_Eliminar.php?id=<?php echo $linhas['idRequerente']; ?>'"><img src='imagens/edit_delete.png' width='30px'></a>
 							<?php
 						echo "</tr>";
 					}
@@ -75,79 +89,10 @@ include_once("menu_Pagina_Inicial.php");
                      </table>  
                 </div>  
            </div>  
+		   
+		 
       </body>  
 	  
-	  
-	  
-<!--eliminar-->
-<script>  
- $(document).ready(function(){  
-      $('#tecnico_data').DataTable();  
-	      $(".remove").click(function(){
-        var id = $(this).parents("tr").attr("id");
-
-        if(confirm('Tem certeza de remover este registo ?'))
-        {
-            $.ajax({
-               url: 'eliminar.php',
-               type:'GET',
-               data: {id: id}, 
-               error: function() {
-                  alert('Algo está errado');
-               },
-               success: function(data) {
-                    $("tecnico_Listar.php"+id).remove();
-                    alert("Registo removido com sucesso");  
-               }
-            });
-        }
-    });
- });  
- </script>
-<!--<script type="text/javascript">
-    //$(".remove").click(function(){
-		$(document).ready(function(){  
-        var id = $(this).parents("tr").attr("id");
-
-        if(confirm('Tem certeza de remover este registo ?'))
-        {
-            $.ajax({
-               url: 'eliminar.php',
-               type:'POST',
-               data: {id: id}, 
-               error: function() {
-                  alert('Algo está errado');
-               },
-               success: function(data) {
-                    $("tecnico_Listar.php"+id).remove();
-                    alert("Registo removido com sucesso");  
-               }
-            });
-        }
-    });
-	
-</script> -->
-<!--
-	  // deleteing rows
-// $(".remove").click(function(){
-// var element = $(this);
-// var remove = element.attr("id");
-// var info = 'did=' + remove;
-// if(confirm("Eliminar?"))
-// {
- // $.ajax({
-   // type: "POST",
-   // url: "eliminar.php",
-   // data: info,
-   // success: function(){
-    // alert('Eliminado com sucesso!');
- // }
-// });
- // }
-// return false;
-// });
--->
-
 	  
 	  
 	  

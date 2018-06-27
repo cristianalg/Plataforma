@@ -57,9 +57,9 @@ html, body {height:100%;}
 		  <ul class="dropdown-menu">
 			  <li><a href="tecnico_Listar.php">TÉCNICOS</a></li>
 			  <li class="divider"></li>
-			  <li><a href="teste_Inicio.php">REQUERENTES</a></li> 
-			  <li><a href="teste_Inicio.php">  &nbsp Tipo de requerente</a></li>
-			  <li><a href="teste_Inicio.php">  &nbsp Requerente</a></li> 
+			  <li><a href="">REQUERENTES</a></li> 
+			  <li><a href="tipo_Requerente_Listar.php">  &nbsp Tipo de requerente</a></li>
+			  <li><a href="requerente_Listar.php">  &nbsp Requerentes</a></li> 
 			  <li class="divider"></li> 	
 			  <li><a href="teste_Inicio.php">POSTOS TRABALHO</a></li> 
 			  <li class="divider"></li>

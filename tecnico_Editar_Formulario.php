@@ -109,6 +109,7 @@ include_once("conexao.php");
 				<?php
 					echo '<textarea class="form-control" rows="3" name="observacao_tecnico">'. $resultado['Observacao_Tecnico']. '</textarea>';
 				?>
+				
 			</div>
 		  </div>
 		  
