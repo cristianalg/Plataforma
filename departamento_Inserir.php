@@ -3,12 +3,12 @@ session_start();
 include_once("seguranca.php");
 include_once("conexao.php");
 
-$nome_tipo_requerente 			= $_POST["nome_tipo_requerente"];
-$tipo_entidade					= $_POST["tipo_entidade"];
-$observacao_tipo_requerente 	= $_POST["observacao_tipo_requerente"];
+$nome_departamento 			= $_POST["nome_departamento"];
+$contacto_departamento		= $_POST["contacto_departamento"];
+$observacao_departamento	= $_POST["observacao_departamento"];
 
 
-if($nome_tipo_requerente == "" || $tipo_entidade == "")
+if($nome_departamento == "" || $contacto_departamento == "")
 {
 	echo "<script language='javascript' type='text/javascript' text-align:'center' > 
 		alert('Os campos com (*) são de preenchimento obrigatório.'); ";
@@ -16,7 +16,7 @@ if($nome_tipo_requerente == "" || $tipo_entidade == "")
 	// session_start();
 	$_SESSION['post_data'] = $_POST;
 	
-	echo "window.location.replace('tipo_Requerente_Inserir_Formulario.php'); </script>";  
+	echo "window.location.replace('departamento_Inserir_Formulario.php'); </script>";  
 	return;
 }
 
@@ -25,8 +25,7 @@ if($nome_tipo_requerente == "" || $tipo_entidade == "")
     {
         //insere na BD
 		//trim — Retira espaço no ínicio e final de uma string
-        $sql = "INSERT INTO tipo_requerente (nome_tipo_requerente, tipo_entidade,observacao_tipo_requerente) VALUES ('".trim($nome_tipo_requerente)."', '".trim($tipo_entidade)."', '".trim($observacao_tipo_requerente)."')";
-		 // $sql = "INSERT INTO tecnico (nome, apelido, numero_funcionario, email, contacto, funcao, user, passowrd, observacao_tecnico) VALUES ('".trim($nome)."', '".trim($apelido)."', '".trim($numero_funcionario)."', '".trim($email)."', '".trim($contacto)."', '".trim($funcao)."', '".trim($user)."', '".trim($password)."', '"$observacao_tecnico"')";
+        $sql = "INSERT INTO departamento (nome_departamento, contacto_departamento,observacao_departamento) VALUES ('".trim($nome_departamento)."', '".trim($contacto_departamento)."', '".trim($observacao_departamento)."')";
 		
 		$result = mysql_query($sql) or die(mysql_error());
  
@@ -37,7 +36,7 @@ if($nome_tipo_requerente == "" || $tipo_entidade == "")
 		//session_destroy();
 		echo "<script language='javascript' type='text/javascript' text-align:'center' > 
 		alert('Inserido com sucesso!'); 
-		window.location.replace('tipo_Requerente_Listar.php'); </script>";
+		window.location.replace('departamento_Listar.php'); </script>";
 
     } 
     catch (Exception $ex)
@@ -49,7 +48,7 @@ if($nome_tipo_requerente == "" || $tipo_entidade == "")
 	   //session_destroy();
 		echo "<script language='javascript' type='text/javascript' text-align:'center' > 
 		alert('Não inserido!'); 
-		window.location.replace('tipo_Requerente_Listar.php'); </script>";
+		window.location.replace('departamento_Listar.php'); </script>";
     }
 	
 

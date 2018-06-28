@@ -13,7 +13,7 @@ include_once("conexao.php");
     <meta name="description" content="Página Inicial">
     <meta name="author" content="Cristiana">
 
-    <title>Requerentes</title>
+    <title>Equipamentos</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/bootstrap-theme.min.css" rel="stylesheet">
     <link href="css/theme.css" rel="stylesheet">
@@ -21,50 +21,40 @@ include_once("conexao.php");
   </head>
 
   <body role="document">
-<?php
-	include_once("menu_Pagina_Inicial.php");	
-	$id = $_GET['id'];
-	//Executa consulta
-	$result = mysql_query("SELECT * FROM tipo_requerente WHERE idTipo_Requerente = '$id'");
-	$resultado = mysql_fetch_assoc($result);
-?>
+	<?php
+		include_once("menu_Pagina_Inicial.php");	
+		$id = $_GET['id'];
+		//Executa consulta
+		$result = mysql_query("SELECT * FROM tipo_equipamento WHERE idTipo_Equipamento = '$id'");
+		$resultado = mysql_fetch_assoc($result);  //mysql_fetch_assoc - Obtém uma linha do resultado como um array associativo
+	?>
+	  
 <div class="container theme-showcase" role="main">      
-	<div class="page-header">
-		<h1>Visualizar Tipo de Requerente</h1>
+  <div class="page-header">
+	<h1>Editar Tipo de Equipamento</h1>
+  </div>
+  
+	
+  <div class="row">
+	<div class="col-md-12">
+	  <form class="form-horizontal" method="POST" action="tipo_Equipamento_Editar.php">
+
+		  
+		  <div class="form-group">
+			<label for="inputEmail3" class="col-sm-2 control-label">Tipo de Equipamento</label>
+			<div class="col-sm-10">
+			  <input type="text" class="form-control" name="nome_tipo_equipamento" placeholder="Tipo de Equipamento" value="<?php echo $resultado['Nome_Tipo_Equipamento']; ?>">
+			</div>
+		  </div>
+		  
+		  <input type="hidden" name="numeroid" value="<?php echo $resultado['idTipo_Equipamento']; ?>">
+		  <div class="form-group">
+			<div class="col-sm-offset-2 col-sm-10">
+			  <button type="submit" class="btn btn-success">Editar</button>
+			</div>
+		  </div>
+		</form>
 	</div>
-	
-	 <div class="row">
-		<div class="pull-right">
-			<a href='tipo_Requerente_Listar.php'><img src="imagens/list.png" width="30px"></a></a>
-			<a href='tipo_Requerente_Editar_Formulario.php?id=<?php echo $resultado['idTipo_Requerente']; ?>'><img src="imagens/edit.ico" width="30px"></a></a>
-			<a href='tipo_requerente_Eliminar.php?id=<?php echo $resultado['idTipo_Requerente']; ?>'><img src='imagens/edit_delete.png' width='30px'></a>
-		</div>
-	</div> 
-	
-	<div class="row">
-		<div class="col-md-12">
-				<div>
-				<b>Id:</b>
-				<?php echo $resultado['idTipo_Requerente']; ?>
-			</div>
-			<br>
-			
-			<div>
-				<b>Tipo de Requerente:</b>
-			<?php echo $resultado['Nome_Tipo_Requerente']; ?>
-			</div>
-			<br>
-				
-			<div>
-				<b>Tipo de Entidade:</b>
-				<?php echo $resultado['Tipo_Entidade']; ?>
-			</div>
-			<br>
-			<div>
-				<b>Observação:</b>
-			<?php echo $resultado['Observacao_Tipo_Requerente']; ?>
-			</div>
-		</div>  
 	</div>
 </div> <!-- /container -->
 

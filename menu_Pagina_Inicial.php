@@ -31,7 +31,6 @@ html, body {height:100%;}
 .aside {width:200px;}
 .fleft {float:left;}
 .fright {float:right;}
-
 </style>
 </head>
 
@@ -57,13 +56,17 @@ html, body {height:100%;}
 		  <ul class="dropdown-menu">
 			  <li><a href="tecnico_Listar.php">TÉCNICOS</a></li>
 			  <li class="divider"></li>
-			  <li><a href="">REQUERENTES</a></li> 
+			  <li><a href="#">REQUERENTES</a></li> 
 			  <li><a href="tipo_Requerente_Listar.php">  &nbsp Tipo de requerente</a></li>
 			  <li><a href="requerente_Listar.php">  &nbsp Requerentes</a></li> 
 			  <li class="divider"></li> 	
-			  <li><a href="teste_Inicio.php">POSTOS TRABALHO</a></li> 
+			  <li><a href="#">POSTOS DE TRABALHO</a></li> 
+			  <li><a href="departamento_Listar.php">  &nbsp Departamentos</a></li>
+			  <li><a href="#">  &nbsp Postos de Trabalho</a></li> 
 			  <li class="divider"></li>
-			  <li><a href="teste_Inicio.php">EQUIPAMENTOS</a></li> 
+			  <li><a href="#">EQUIPAMENTOS</a></li> 
+			  <li><a href="tipo_Equipamento_Listar.php">  &nbsp Tipo de Equipamentos</a></li>
+			  <li><a href="#">  &nbsp Equipamentos</a></li> 
 		  </ul>
 		</li>
 	
@@ -74,8 +77,10 @@ html, body {height:100%;}
 		<li class="dropdown">
 		  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Assistências Técnicas <span class="caret"></span></a>
 		  <ul class="dropdown-menu">
-			<li><a href="aaaa.php">Inserir Assistências</a></li>     
-			<li><a href="teste_Inicio.php">Listar Assistências</a></li>
+			<li><a>ASSISTÊNCIAS</a></li> 
+			  <li><a href="tipo_Assistencia_Listar.php">  &nbsp Tipo de Assistências</a></li>
+			  <li><a href="#">  &nbsp Assistências</a></li> 
+			  <li class="divider"></li>
 			<li><a href="teste_Inicio.php">Inserir Instalação Computadores</a></li>
 			<li><a href="teste_Inicio.php">Listar Instalação Computadores</a></li>
 			
@@ -85,10 +90,11 @@ html, body {height:100%;}
 		</li>
 		
 		<li class="dropdown">
-		  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Postos Trabalhos <span class="caret"></span></a>
+		  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sistema <span class="caret"></span></a>
 		  <ul class="dropdown-menu">
-			<li><a href="aaaa.php">Inserir</a></li>     
-			<li><a href="teste_Inicio.php">Listar</a></li>
+			<li><a href="#">Software</a></li>     
+			<li><a href="sistema_Operativo_Listar.php">Sistema Operativo</a></li>
+			<li><a href="#">Office</a></li>
 		  </ul>
 		</li>
 		
@@ -116,6 +122,7 @@ html, body {height:100%;}
   </div>
 </nav>
 <!-- Fim navbar -->
+
 
   <!--Rodapé -->
 <div class="content">

@@ -13,7 +13,7 @@ include_once("conexao.php");
     <meta name="description" content="Página Inicial">
     <meta name="author" content="Cristiana">
 
-    <title>Técnicos</title>
+    <title>Sistema Operativo</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/bootstrap-theme.min.css" rel="stylesheet">
     <link href="css/theme.css" rel="stylesheet">
@@ -25,19 +25,19 @@ include_once("conexao.php");
 	include_once("menu_Pagina_Inicial.php");	
 	$id = $_GET['id'];
 	//Executa consulta
-	$result = mysql_query("SELECT * FROM tecnico WHERE idTecnico = '$id'");
+	$result = mysql_query("SELECT * FROM sistema_operativo WHERE idSistema_Operativo = '$id'");
 	$resultado = mysql_fetch_assoc($result);
 ?>
 <div class="container theme-showcase" role="main">      
 	<div class="page-header">
-		<h1>Visualizar Técnico</h1>
+		<h1>Visualizar Sistema Operativo</h1>
 	</div>
 	
 	 <div class="row">
 		<div class="pull-right">
-			<a href='tecnico_Listar.php'><img src="imagens/list.png" width="30px"></a></a>
-			<a href='tecnico_Editar_Formulario.php?id=<?php echo $resultado['idTecnico']; ?>'><img src="imagens/edit.ico" width="30px"></a></a>
-			<a href='tecnico_Eliminar.php?id=<?php echo $resultado['idTecnico']; ?>'><img src='imagens/edit_delete.png' width='30px'></a>
+			<a href='sistema_Operativo_Listar.php'><img src="imagens/list.png" width="30px"></a></a>
+			<a href='sistema_Operativo_Editar_Formulario.php?id=<?php echo $resultado['idSistema_Operativo']; ?>'><img src="imagens/edit.ico" width="30px"></a></a>
+			<a href='sistema_Operativo_Eliminar.php?id=<?php echo $resultado['idSistema_Operativo']; ?>'><img src='imagens/edit_delete.png' width='30px'></a>
 		</div>
 	</div> 
 	
@@ -45,55 +45,19 @@ include_once("conexao.php");
 		<div class="col-md-12">
 				<div>
 				<b>Id:</b>
-				<?php echo $resultado['idTecnico']; ?>
+				<?php echo $resultado['idSistema_Operativo']; ?>
 			</div>
 			<br>
 			
 			<div>
-				<b>Nome:</b>
-			<?php echo $resultado['Nome']; ?>
-			</div>
-			<br>
-				
-			<div>
-				<b>Apelido:</b>
-				<?php echo $resultado['Apelido']; ?>
-			</div>
-			<br>
-			
-			<div>
-				<b>Nº Funcionário:</b>
-			<?php echo $resultado['Numero_Funcionario']; ?>
-			</div>
-			<br>
-			
-			<div>
-				<b>E-mail:</b>
-			<?php echo $resultado['Email']; ?>
-			</div>
-			<br>
-			
-			 <div>
-				<b>Contacto:</b>
-			<?php echo $resultado['Contacto']; ?>
-			</div>	
-			<br>
-			
-			<div>
-				<b>Função:</b>
-			<?php echo $resultado['Funcao']; ?>
-			</div>
-			<br>
-			
-			<div>
-				<b>User:</b>
-				<?php echo $resultado['User']; ?>
+				<b>Sistema Operativo:</b>
+			<?php echo $resultado['Nome_Sistema_Operativo']; ?>
 			</div>
 			<br>
 			
 			<div>
 				<b>Observação:</b>
-			<?php echo $resultado['Observacao_Tecnico']; ?>
+			<?php echo $resultado['Observacao_Sistema_Operativo']; ?>
 			</div>
 		</div>  
 	</div>

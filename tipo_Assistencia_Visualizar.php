@@ -13,7 +13,7 @@ include_once("conexao.php");
     <meta name="description" content="Página Inicial">
     <meta name="author" content="Cristiana">
 
-    <title>Técnicos</title>
+    <title>Assistências Técnicas</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/bootstrap-theme.min.css" rel="stylesheet">
     <link href="css/theme.css" rel="stylesheet">
@@ -25,75 +25,39 @@ include_once("conexao.php");
 	include_once("menu_Pagina_Inicial.php");	
 	$id = $_GET['id'];
 	//Executa consulta
-	$result = mysql_query("SELECT * FROM tecnico WHERE idTecnico = '$id'");
+	$result = mysql_query("SELECT * FROM tipo_assistencia  WHERE idTipo_Assistencia = '$id'");
 	$resultado = mysql_fetch_assoc($result);
 ?>
 <div class="container theme-showcase" role="main">      
 	<div class="page-header">
-		<h1>Visualizar Técnico</h1>
+		<h1>Visualizar Tipo de Assistência</h1>
 	</div>
 	
 	 <div class="row">
 		<div class="pull-right">
-			<a href='tecnico_Listar.php'><img src="imagens/list.png" width="30px"></a></a>
-			<a href='tecnico_Editar_Formulario.php?id=<?php echo $resultado['idTecnico']; ?>'><img src="imagens/edit.ico" width="30px"></a></a>
-			<a href='tecnico_Eliminar.php?id=<?php echo $resultado['idTecnico']; ?>'><img src='imagens/edit_delete.png' width='30px'></a>
+			<a href='tipo_Assistencia_Listar.php'><img src="imagens/list.png" width="30px"></a></a>
+			<a href='tipo_Assistencia_Editar_Formulario.php?id=<?php echo $resultado['idTipo_Assistencia']; ?>'><img src="imagens/edit.ico" width="30px"></a></a>
+			<a href='tipo_Assistencia_Eliminar.php?id=<?php echo $resultado['idTipo_Assistencia']; ?>'><img src='imagens/edit_delete.png' width='30px'></a>
 		</div>
-	</div> 
+	</div>  
 	
 	<div class="row">
 		<div class="col-md-12">
 				<div>
 				<b>Id:</b>
-				<?php echo $resultado['idTecnico']; ?>
+				<?php echo $resultado['idTipo_Assistencia']; ?>
 			</div>
 			<br>
 			
 			<div>
-				<b>Nome:</b>
-			<?php echo $resultado['Nome']; ?>
-			</div>
-			<br>
-				
-			<div>
-				<b>Apelido:</b>
-				<?php echo $resultado['Apelido']; ?>
-			</div>
-			<br>
-			
-			<div>
-				<b>Nº Funcionário:</b>
-			<?php echo $resultado['Numero_Funcionario']; ?>
-			</div>
-			<br>
-			
-			<div>
-				<b>E-mail:</b>
-			<?php echo $resultado['Email']; ?>
-			</div>
-			<br>
-			
-			 <div>
-				<b>Contacto:</b>
-			<?php echo $resultado['Contacto']; ?>
-			</div>	
-			<br>
-			
-			<div>
-				<b>Função:</b>
-			<?php echo $resultado['Funcao']; ?>
-			</div>
-			<br>
-			
-			<div>
-				<b>User:</b>
-				<?php echo $resultado['User']; ?>
+				<b>Tipo de Assistência:</b>
+			<?php echo $resultado['Nome_Tipo_Assistencia']; ?>
 			</div>
 			<br>
 			
 			<div>
 				<b>Observação:</b>
-			<?php echo $resultado['Observacao_Tecnico']; ?>
+			<?php echo $resultado['Observacao_Tipo_Assistencia']; ?>
 			</div>
 		</div>  
 	</div>
