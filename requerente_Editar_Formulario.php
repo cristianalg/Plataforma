@@ -58,16 +58,24 @@ include_once("conexao.php");
 			</div>
 		  </div>
 		
-		  <div class="form-group">
-			<label for="inputEmail3" class="col-sm-2 control-label">Tipo de Entidade</label>
+		
+		  <?php $tipo_RequerenteFK_id = $resultado['Tipo_Requerente_idTipo_Requerente'];?>
+		<div class="form-group">
+			<label for="inputEmail3" class="col-sm-2 control-label">Tipo de Requerente</label>
 			<div class="col-sm-10">
-			  <input type="text" class="form-control" name="entidade"  value="<?php
-				$result_cat =mysql_query("SELECT Nome_Tipo_Requerente FROM tipo_requerente INNER JOIN 
-								requerente ON tipo_Requerente.idTipo_Requerente = requerente.Tipo_Requerente_idTipo_Requerente where requerente.idRequerente = ".$resultado['idRequerente'].";");
-				while($dados = mysql_fetch_assoc($result_cat)){
-					echo $dados['Nome_Tipo_Requerente'];
-				}
-			?>">
+			<select class="form-control" name="idrequerente">
+				<?php 
+						$result_req =mysql_query("SELECT idTipo_requerente, Nome_Tipo_Requerente  FROM tipo_requerente");
+						while($dados = mysql_fetch_assoc($result_req)){
+							$id_tipo_RequerentePK = $dados['idTipo_requerente'];
+							?>
+								<option value="<?php echo $dados["idTipo_requerente"]; ?>"
+								<?php if($id_tipo_RequerentePK == $tipo_RequerenteFK_id){ echo 'selected'; } ?>
+								><?php echo $dados["Nome_Tipo_Requerente"];?></option>
+							<?php
+						}
+				?>	
+			</select>
 			</div>
 		</div>
 		

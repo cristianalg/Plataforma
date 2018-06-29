@@ -43,7 +43,8 @@ include_once("conexao.php");
 	
 	<div class="row">
 		<div class="col-md-12">
-				<div>
+			
+			<div>
 				<b>Id:</b>
 				<?php echo $resultado['idTipo_Requerente']; ?>
 			</div>
