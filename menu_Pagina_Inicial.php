@@ -62,11 +62,11 @@ html, body {height:100%;}
 			  <li class="divider"></li> 	
 			  <li><a href="#">POSTOS DE TRABALHO</a></li> 
 			  <li><a href="departamento_Listar.php">  &nbsp Departamentos</a></li>
-			  <li><a href="#">  &nbsp Postos de Trabalho</a></li> 
+			  <li><a href="posto_Trabalho_Listar.php">  &nbsp Postos de Trabalho</a></li> 
 			  <li class="divider"></li>
 			  <li><a href="#">EQUIPAMENTOS</a></li> 
 			  <li><a href="tipo_Equipamento_Listar.php">  &nbsp Tipo de Equipamentos</a></li>
-			  <li><a href="#">  &nbsp Equipamentos</a></li> 
+			  <li><a href="equipamentos_Listar.php">  &nbsp Equipamentos</a></li> 
 		  </ul>
 		</li>
 	
@@ -94,7 +94,8 @@ html, body {height:100%;}
 		  <ul class="dropdown-menu">
 			<li><a href="#">Software</a></li>     
 			<li><a href="sistema_Operativo_Listar.php">Sistema Operativo</a></li>
-			<li><a href="#">Office</a></li>
+			<li><a href="office_Listar.php">Office</a></li>
+			<li><a href="#">Aplicativos & AIRC</a></li>
 		  </ul>
 		</li>
 		

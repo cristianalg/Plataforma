@@ -1,10 +1,10 @@
-﻿ <?php  
+ <?php  
  session_start(); //cria uma sessão ou resume a sessão atual baseado num id de sessão passado via POST
 include_once("seguranca.php");
 include_once("conexao.php");
 include_once("menu_Pagina_Inicial.php");
- // $connect = mysqli_connect("localhost", "root", "", "testing");  
- $query ="SELECT * FROM tecnico ORDER BY IdTecnico DESC";  
+
+ $query ="SELECT * FROM office ORDER BY idOffice DESC";  
  $resultado = mysql_query($query);  
  
  ?>  
@@ -17,21 +17,21 @@ include_once("menu_Pagina_Inicial.php");
 		<meta name="description" content="Página Inicial">
 		<meta name="author" content="Cristiana">
 
-		<title>Técnicos</title>
+		<title>Office</title>
 		<link href="css/bootstrap.min.css" rel="stylesheet">
 		<link href="css/bootstrap-theme.min.css" rel="stylesheet">
 		<link href="css/theme.css" rel="stylesheet">
 		<script src="js/ie-emulation-modes-warning.js"></script>
 		
-
+	
     </head>  
     <body>  
         <div class="container">  
             <div>
 			<!--<div class="page-header">-->
-				<h1>Lista dos Técnicos
+				<h1>Lista dos Office
 				&nbsp
-				<a href="tecnico_Inserir_Formulario.php"><img src="imagens/add1.ico" width="30px"></a>
+				<a href="office_Inserir_Formulario.php"><img src="imagens/add1.ico" width="30px"></a>
 				</h1>
 			</div> 
             <div class="table-responsive">  
@@ -39,11 +39,8 @@ include_once("menu_Pagina_Inicial.php");
                      <thead>  
                          <tr>  
 							<th>ID</th>
-							<th>Nº Funcionário</th>
-							<th>Nome</th>
-							<th>E-mail</th>
-							<th>Contacto</th>
-							<th>Função</th>
+							<th>Nome Office</th>
+							<th>Versão</th>
 							<th>Ações</th>
                         </tr>  
                     </thead>  
@@ -52,18 +49,15 @@ include_once("menu_Pagina_Inicial.php");
 				  <?php 
 					while($linhas = mysql_fetch_array($resultado)){
 						echo "<tr>";
-							echo "<td>".$linhas['idTecnico']."</td>";
-							echo "<td>".$linhas['Numero_Funcionario']."</td>";
-							echo "<td>".$linhas['Nome']."</td>";
-							echo "<td>".$linhas['Email']."</td>";
-							echo "<td>".$linhas['Contacto']."</td>";
-							echo "<td>".$linhas['Funcao']."</td>";
+							echo "<td>".$linhas['idOffice']."</td>";
+							echo "<td>".$linhas['Nome_Office']."</td>";
+							echo "<td>".$linhas['Versao_Office']."</td>";
 							?>
 							
 							<td> 
-							<a href='tecnico_Visualizar.php?id=<?php echo $linhas['idTecnico']; ?>'><img src='imagens/info.ico' width='30px'></a>
-							<a href='tecnico_Editar_Formulario.php?id=<?php echo $linhas['idTecnico']; ?>'><img src='imagens/edit.ico' width='30px'></a>
-							<a href="#" onclick="javascript: if (confirm('Deseja remover este registo?'))location.href='tecnico_Eliminar.php?id=<?php echo $linhas['idTecnico']; ?>'"><img src='imagens/edit_delete.png' width='30px'></a>
+							<a href='office_Visualizar.php?id=<?php echo $linhas['idOffice']; ?>''><img src='imagens/info.ico' width='30px'></a>
+							<a href='office_Editar_Formulario.php?id=<?php echo $linhas['idOffice']; ?>'><img src='imagens/edit.ico' width='30px'></a>
+							<a href="#" onclick="javascript: if (confirm('Deseja remover este registo?'))location.href='office_Eliminar.php?id=<?php echo $linhas['idOffice']; ?>'"><img src='imagens/edit_delete.png' width='30px'></a>
 							<?php
 						echo "</tr>";
 					}
@@ -72,7 +66,10 @@ include_once("menu_Pagina_Inicial.php");
                 </div>  
            </div>  
       </body>  
-
+	
+	  
+	  
+	  
 	      <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->

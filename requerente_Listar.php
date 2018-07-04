@@ -43,9 +43,9 @@ include_once("menu_Pagina_Inicial.php");
                      <thead>  
                          <tr>  
 							<th>ID</th>
+							<th>Tipo de Requerente</th>
 							<th>Nome</th>
 							<th>Nº Funcionário</th>
-							<th>Tipo de Requerente</th>
 							<th>E-mail</th>
 							<th>Contacto</th>
 							<th>Ações</th>
@@ -58,19 +58,20 @@ include_once("menu_Pagina_Inicial.php");
 					while($linhas = mysql_fetch_array($resultado)){
 						echo "<tr>";
 							echo "<td>".$linhas['idRequerente']."</td>";
-							echo "<td>".$linhas['Nome_Requerente']."</td>";
-							
-							if($linhas['Numero_Funcionario'] == 0){
-								echo "<td>".$sem. "</td>";
-							}else{
-								echo "<td>".$linhas['Numero_Funcionario']."</td>";
-							}
 							
 							//echo "<td>".$linhas['Tipo_Requerente_idTipo_Requerente']."</td>";
 							$result_cat =mysql_query("SELECT Nome_Tipo_Requerente FROM tipo_requerente INNER JOIN 
 							requerente ON tipo_Requerente.idTipo_Requerente = requerente.Tipo_Requerente_idTipo_Requerente where requerente.idRequerente = ".$linhas['idRequerente'].";");
 							while($dados = mysql_fetch_assoc($result_cat)){
 								echo "<td>".$dados['Nome_Tipo_Requerente']."</td>";
+							}
+							
+							echo "<td>".$linhas['Nome_Requerente']."</td>";
+							
+							if($linhas['Numero_Funcionario'] == 0){
+								echo "<td>".$sem. "</td>";
+							}else{
+								echo "<td>".$linhas['Numero_Funcionario']."</td>";
 							}
 							echo "<td>".$linhas['Email']."</td>";
 							echo "<td>".$linhas['Contacto_Requerente']."</td>";

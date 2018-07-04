@@ -21,6 +21,7 @@ include_once("seguranca.php");
 
   <body role="document">
 	<?php
+	
 		include_once("menu_Pagina_Inicial.php");	
 	  
 		if(isset($_SESSION['post_data'])){
