@@ -13,12 +13,12 @@ include_once("conexao.php");
     <meta name="description" content="Página Inicial">
     <meta name="author" content="Cristiana">
 
-    <title>Office</title>
+    <title>Posto de Trabalho</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/bootstrap-theme.min.css" rel="stylesheet">
     <link href="css/theme.css" rel="stylesheet">
     <script src="js/ie-emulation-modes-warning.js"></script>
-
+	
 	<!-- Zoom da Imagem -->
 	<style>
 	div.item {
@@ -50,7 +50,6 @@ include_once("conexao.php");
 
 	}
 	</style>
-
   </head>
 
   <body role="document">
@@ -58,52 +57,78 @@ include_once("conexao.php");
 	include_once("menu_Pagina_Inicial.php");	
 	$id = $_GET['id'];
 	//Executa consulta
-	$result = mysql_query("SELECT * FROM office WHERE idOffice = '$id'");
+	$result = mysql_query("SELECT * FROM registo_postos_trabalho WHERE 	idRegisto_Postos_Trabalho = '$id'");
 	$resultado = mysql_fetch_assoc($result);
 ?>
 <div class="container theme-showcase" role="main">      
 	<div class="page-header">
-		<h1>Visualizar Office</h1>
+		<h1>Visualizar Posto de Trabalho</h1>
 	</div>
 	
 	 <div class="row">
 		<div class="pull-right">
-			<a href='office_Listar.php'><img src="imagens/list.png" width="30px"></a></a>
-			<a href='office_Editar_Formulario.php?id=<?php echo $resultado['idOffice']; ?>'><img src="imagens/edit.ico" width="30px"></a></a>
-			<a href='office_Eliminar.php?id=<?php echo $resultado['idOffice']; ?>'><img src='imagens/edit_delete.png' width='30px'></a>
+			<a href='posto_Trabalho_Listar.php'><img src="imagens/list.png" width="30px"></a></a>
+			<a href='posto_Trabalho_Editar_Formulario.php?id=<?php echo $resultado['idRegisto_Postos_Trabalho']; ?>'><img src="imagens/edit.ico" width="30px"></a></a>
+			<a href='posto_Trabalho_Eliminar.php?id=<?php echo $resultado['idRegisto_Postos_Trabalho']; ?>'><img src='imagens/edit_delete.png' width='30px'></a>
 		</div>
 	</div> 
 	
 	<div class="row">
 		<div class="col-md-12">
-			
-			<div>
+				<div>
 				<b>Id:</b>
-				<?php echo $resultado['idOffice']; ?>
+				<?php echo $resultado['idRegisto_Postos_Trabalho']; ?>
 			</div>
 			<br>
 			
 			<div>
-				<b>Nome do Office:</b>
-			<?php echo $resultado['Nome_Office']; ?>
-			</div>
-			<br>
-				
-			<div>
-				<b>Versão do Office:</b>
-				<?php echo $resultado['Versao_Office']; ?>
+				<b>Cargo:</b>
+			<?php echo $resultado['Cargo']; ?>
 			</div>
 			<br>
 			
 			<div>
-				<b>Descrição:</b>
-				<?php echo $resultado['Descricao_Office']; ?>
+				<b>Departamento:</b>
+			
+			<?php
+				$result_cat =mysql_query("SELECT Nome_Departamento FROM departamento INNER JOIN 
+								registo_postos_trabalho ON departamento.idDepartamento = registo_postos_trabalho.Departamento_idDepartamento where registo_postos_trabalho.idRegisto_Postos_Trabalho = ".$resultado['idRegisto_Postos_Trabalho'].";");
+				while($dados = mysql_fetch_assoc($result_cat)){
+					echo "<td>".$dados['Nome_Departamento']."</td>";
+				}
+			?>
+			</div>
+			<br>
+			
+			<div>
+				<b>Tipo de Requerente:</b>
+			
+			<?php
+				$result_cat =mysql_query("SELECT Nome_Tipo_Requerente FROM tipo_requerente INNER JOIN 
+								registo_postos_trabalho ON tipo_requerente.idtipo_requerente = registo_postos_trabalho.Requerente_Tipo_Requerente_idTipo_Requerente where registo_postos_trabalho.idRegisto_Postos_Trabalho = ".$resultado['idRegisto_Postos_Trabalho'].";");
+				while($dados = mysql_fetch_assoc($result_cat)){
+					echo "<td>".$dados['Nome_Tipo_Requerente']."</td>";
+				}
+			?>
+			</div>
+			<br>
+			
+			<div>
+				<b>Nome do Requerente:</b>
+			
+			<?php
+				$result_cat =mysql_query("SELECT Nome_Requerente FROM requerente INNER JOIN 
+								registo_postos_trabalho ON requerente.idrequerente = registo_postos_trabalho.Requerente_idRequerente where registo_postos_trabalho.idRegisto_Postos_Trabalho = ".$resultado['idRegisto_Postos_Trabalho'].";");
+				while($dados = mysql_fetch_assoc($result_cat)){
+					echo "<td>".$dados['Nome_Requerente']."</td>";
+				}
+			?>
 			</div>
 			<br>
 			
 			<div>
 				<b>Observação:</b>
-			<?php echo $resultado['Observacao_Office']; ?>
+			<?php echo $resultado['Observacao_Registo_Postos_Trabalho']; ?>
 			</div>
 			<br>
 			
@@ -112,11 +137,11 @@ include_once("conexao.php");
 			<?php
 				$id = $_GET["id"];
 
-				$query ="SELECT foto FROM office WHERE idOffice = '".$id."'";  
+				$query ="SELECT anexo FROM registo_postos_trabalho WHERE idRegisto_Postos_Trabalho = '".$id."'";  
 				$resultado = mysql_query($query);  
 				$linhas = mysql_fetch_array($resultado);
 				
-				if($linhas['foto'] == NULL){
+				if($linhas['anexo'] == NULL){
 					//echo "sem foto";
 					 echo "Sem Anexo";
 				}else{
@@ -126,11 +151,11 @@ include_once("conexao.php");
 					<div class="inner">
 						<?php
 					
-							$sql = mysql_query("SELECT foto FROM office WHERE idOffice = '$id'");
+							$sql = mysql_query("SELECT  anexo FROM registo_postos_trabalho WHERE idRegisto_Postos_Trabalho = '$id'");
 							 
 							while ($img = mysql_fetch_object($sql)) {
 								// Exibimos a foto
-								echo "<img src='Anexos_Office/".$img->foto."' /><br/>";
+								echo "<img src='Anexos_Postos_Trabalho/".$img->anexo."' /><br/>";
 							}
 				}	
 						?>
@@ -143,6 +168,7 @@ include_once("conexao.php");
 	</div>
 </div> <!-- /container -->
 
+
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
@@ -153,3 +179,4 @@ include_once("conexao.php");
     <script src="js/ie10-viewport-bug-workaround.js"></script>
   </body>
 </html>
+

@@ -29,8 +29,6 @@ include_once("seguranca.php");
 			$versao_office			= $_POST["versao_office"];
 			$descricao_office		= $_POST["descricao_office"];
 			$observacao_office		= $_POST["observacao_office"];
-			//falta anexo
-			//$foto 					= $_FILES["foto"];
 		}
 		
 

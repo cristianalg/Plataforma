@@ -59,7 +59,7 @@ include_once("conexao.php");
 			<label for="inputPassword3" class="col-sm-2 control-label">Tipo de requerente<font color="red" size="4">&nbsp*</font></label>
 			<div class="col-sm-10">
 			  <select class="form-control" name="idtipo_requerente">
-				 
+				 <option value="">Selecione o Tipo de Requerente</option>
 				  <?php 
 						#seleciona os dados da tabela tipo requerente	
 						$resultado =mysql_query("SELECT idtipo_requerente, Nome_Tipo_Requerente  FROM tipo_requerente;");

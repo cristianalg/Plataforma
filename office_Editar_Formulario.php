@@ -68,7 +68,6 @@ include_once("conexao.php");
 				<?php
 					echo '<textarea class="form-control" rows="3" name="observacao_office">'. $resultado['Observacao_Office']. '</textarea>';
 				?>
-				
 			</div>
 		  </div>
 		  
@@ -81,10 +80,6 @@ include_once("conexao.php");
 				</div>
 		</div>
 		
-			   
-		 
-		
-		  
 		<?php 
 			$foto = $resultado['foto'];
 		?>
@@ -101,14 +96,6 @@ include_once("conexao.php");
 		<?php 
 			}
 		?>
-		  
-		
-		 
-		 
-		 
-
-
-
 		  
 		  <input type="hidden" name="numeroid" value="<?php echo $resultado['idOffice']; ?>">
 		  <div class="form-group">

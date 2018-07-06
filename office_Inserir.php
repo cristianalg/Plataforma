@@ -43,7 +43,7 @@ include_once("conexao.php");
     	if(!preg_match("/^image\/(pjpeg|jpeg|png|gif|bmp)$/", $foto["type"])){
      	   //$error[1] = "Isso não é uma imagem.";
 		   $error[1] = "<script language='javascript' type='text/javascript' text-align:'center' > 
-					alert('Isso não é uma imagem.'); 
+					alert('Extensão inválida, insira formato de imagem.'); 
 					window.location.replace('office_Inserir_Formulario.php'); </script>";
    	 	} 
 	
@@ -78,7 +78,7 @@ include_once("conexao.php");
 		if (count($error) == 0) {
 		
 			// Pega extensão da imagem
-			preg_match("/\.(gif|bmp|png|jpg|jpeg){1}$/i", $foto["name"], $ext);
+			preg_match("/\.(gif|bmp|png|jpg|jpeg!){1}$/i", $foto["name"], $ext);
  
         	// Gera um nome único para a imagem
         	$nome_imagem = md5(uniqid(time())) . "." . $ext[1];
@@ -94,7 +94,7 @@ include_once("conexao.php");
 				//echo "sucesso.";
 				  $_SESSION['post_data']=NULL;
 					echo "<script language='javascript' type='text/javascript' text-align:'center' > 
-						alert('Registo inserido com imagem!'); 
+						alert('Registo inserido com anexo!'); 
 						window.location.replace('office_Listar.php'); </script>";
 			}else{
 				//echo " nao sucesso.";
@@ -113,7 +113,7 @@ include_once("conexao.php");
 					echo $erro . "<br />";
 				}
 			}
-		}else{
+	}else{
 	
 			try
 			{
