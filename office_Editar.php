@@ -20,12 +20,13 @@
 		$query = mysql_query("UPDATE office set nome_office ='$nome_office', versao_office ='$versao_office', descricao_office ='$descricao_office',observacao_office = '$observacao_office' WHERE idOffice = '$id'");
 		echo "
 			<script type=\"text/javascript\">
-				alert('Editado com sucesso, mas sem anexo!'); 
+				alert('Editado com sucesso!'); 
 				 window.location.replace('office_Listar.php'); </script>
 			</script>
 		";		
 	}elseif($linhas['foto'] == NULL){
 		//echo"BD sem foto";
+		
 		// Se a foto estiver sido selecionada
 			/*if (!empty($foto["name"])) {
 				
@@ -75,6 +76,7 @@
 							window.location.replace('office_Editar_Formulario.php'); </script>";
 				}*/
 		 
+		 $error = array();
 				// Se não houver nenhum erro
 				if (count($error) == 0) {
 				
@@ -96,7 +98,7 @@
 							alert('Editado com sucesso!'); 
 							 window.location.replace('office_Listar.php'); </script>
 						</script>
-					";	
+					";
 				}
 			//}
 		

@@ -65,17 +65,17 @@ include_once("conexao.php");
 			<div class="col-sm-10">
 			<select class="form-control" name="idrequerente">
 				<?php 
-						$result_req =mysql_query("SELECT idTipo_requerente, Nome_Tipo_Requerente  FROM tipo_requerente");
+						$result_req =mysql_query("SELECT idTipo_Requerente, Nome_Tipo_Requerente  FROM tipo_requerente");
 						while($dados = mysql_fetch_assoc($result_req)){
-							$id_tipo_RequerentePK = $dados['idTipo_requerente'];
+							$id_tipo_RequerentePK = $dados['idTipo_Requerente'];
 							?>
-								<option value="<?php echo $dados["idTipo_requerente"]; ?>"
+								<option value="<?php echo $dados["idTipo_Requerente"]; ?>"
 								<?php if($id_tipo_RequerentePK == $tipo_RequerenteFK_id){ echo 'selected'; } ?>
 								><?php echo $dados["Nome_Tipo_Requerente"];?></option>
 							<?php
 						}
 				?>	
-			</select>
+				</select>
 			</div>
 		</div>
 		
