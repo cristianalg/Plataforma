@@ -17,7 +17,7 @@ include_once("menu_Pagina_Inicial.php");
 		<meta name="description" content="Página Inicial">
 		<meta name="author" content="Cristiana">
 
-		<title>Equipamentos</title>
+		<title>Tipo de Equipamentos</title>
 		<link href="css/bootstrap.min.css" rel="stylesheet">
 		<link href="css/bootstrap-theme.min.css" rel="stylesheet">
 		<link href="css/theme.css" rel="stylesheet">

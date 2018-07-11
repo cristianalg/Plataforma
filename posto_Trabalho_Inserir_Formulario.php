@@ -97,7 +97,6 @@ include_once("conexao.php");
 					}
 				?>
 			</select>
-					
 			</div>
 		  </div>
 		  
@@ -141,7 +140,7 @@ include_once("conexao.php");
 
 	
 	
-	<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+		<script type="text/javascript" src="https://www.google.com/jsapi"></script>
 		<script type="text/javascript">
 		  google.load("jquery", "1.4.2");
 		</script>

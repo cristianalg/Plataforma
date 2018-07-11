@@ -10,7 +10,7 @@
 	while ($row_requerente = mysql_fetch_assoc($resultado_req) ) {
 		$requerente_post[] = array(
 			'idRequerente'	=> $row_requerente['idRequerente'],
-			'Nome_Requerente' => utf8_encode($row_requerente['Nome_Requerente']),
+			'Nome_Requerente' => ($row_requerente['Nome_Requerente']),
 		);
 	}
 	

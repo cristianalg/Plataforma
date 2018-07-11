@@ -43,8 +43,8 @@ include_once("menu_Pagina_Inicial.php");
                      <thead>  
                          <tr>  
 							<th>ID</th>
-							<th>Cargo</th>
 							<th>Departamento</th>
+							<th>Cargo</th>
 							<th>Tipo Requerente</th>
 							<th>Requerente</th>
 							<th>Ações</th>
@@ -55,7 +55,6 @@ include_once("menu_Pagina_Inicial.php");
 					while($linhas = mysql_fetch_array($resultado)){
 						echo "<tr>";
 							echo "<td>".$linhas['idRegisto_Postos_Trabalho']."</td>";
-							echo "<td>".$linhas['Cargo']."</td>";
 							
 							//departamento
 							$result_cat =mysql_query("SELECT Nome_Departamento FROM departamento INNER JOIN 
@@ -63,6 +62,8 @@ include_once("menu_Pagina_Inicial.php");
 							while($dados = mysql_fetch_assoc($result_cat)){
 								echo "<td>".$dados['Nome_Departamento']."</td>";
 							}
+							
+							echo "<td>".$linhas['Cargo']."</td>";
 							
 							//tipo de requerente
 							$result_cat =mysql_query("SELECT Nome_Tipo_Requerente FROM tipo_requerente INNER JOIN 

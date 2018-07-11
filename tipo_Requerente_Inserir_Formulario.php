@@ -11,7 +11,7 @@ include_once("seguranca.php");
     <meta name="description" content="Página Inicial">
     <meta name="author" content="Cristiana">
 
-    <title>Requerentes</title>
+    <title>Tipo de Requerentes</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/bootstrap-theme.min.css" rel="stylesheet">
     <link href="css/theme.css" rel="stylesheet">

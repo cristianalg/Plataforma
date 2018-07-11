@@ -94,10 +94,12 @@ include_once("conexao.php");
 							<?php
 						}
 				?>	
+				
 			</select>
 			</div>
 		</div>
 		
+		<?php $var_idTipo = $resultado['Requerente_Tipo_Requerente_idTipo_Requerente'];?> 
 		
 		<?php $tipo_RequerenteFK_id = $resultado['Requerente_idRequerente'];?>
 				<div class="form-group">
@@ -108,7 +110,7 @@ include_once("conexao.php");
 				<!--<option value="">Selecione o Tipo de Requerente</option> -->
 				
 				<?php
-					$result_req =mysql_query("SELECT idRequerente, Nome_Requerente  FROM requerente ORDER BY Nome_Requerente");
+					$result_req =mysql_query("SELECT idRequerente, Nome_Requerente  FROM requerente WHERE Tipo_Requerente_idTipo_Requerente = ".$var_idTipo." ORDER BY Nome_Requerente");
 					while($dados = mysql_fetch_assoc($result_req)){
 					$id_tipo_RequerentePK = $dados['idRequerente'];
 				?>
