@@ -1,10 +1,10 @@
- <?php  
- session_start(); //cria uma sessão ou resume a sessão atual baseado num id de sessão passado via POST
+﻿<?php  
+session_start(); //cria uma sessão ou resume a sessão atual baseado num id de sessão passado via POST
 include_once("seguranca.php");
 include_once("conexao.php");
 include_once("menu_Pagina_Inicial.php");
-
- $query ="SELECT * FROM tipo_assistencia ORDER BY idTipo_Assistencia DESC";  
+ // $connect = mysqli_connect("localhost", "root", "", "testing");  
+ $query ="SELECT * FROM equipamentos ORDER BY idEquipamentos DESC";  
  $resultado = mysql_query($query);  
  
  ?>  
@@ -17,21 +17,20 @@ include_once("menu_Pagina_Inicial.php");
 		<meta name="description" content="Página Inicial">
 		<meta name="author" content="Cristiana">
 
-		<title>Tipo de Assistências Técnicas</title>
+		<title>Equipamentos</title>
 		<link href="css/bootstrap.min.css" rel="stylesheet">
 		<link href="css/bootstrap-theme.min.css" rel="stylesheet">
 		<link href="css/theme.css" rel="stylesheet">
 		<script src="js/ie-emulation-modes-warning.js"></script>
-		
 	
     </head>  
     <body>  
         <div class="container">  
             <div>
 			<!--<div class="page-header">-->
-				<h1>Lista dos Tipos de Assistências Técnicas
+				<h1>Lista dos Equipamentos
 				&nbsp
-				<a href="tipo_Assistencia_Inserir_Formulario.php"><img src="imagens/add1.ico" width="30px"></a>
+				<a href="equipamentos_Inserir_Formulario.php"><img src="imagens/add1.ico" width="30px"></a>
 				</h1>
 			</div> 
             <div class="table-responsive">  
@@ -39,25 +38,40 @@ include_once("menu_Pagina_Inicial.php");
                      <thead>  
                          <tr>  
 							<th>ID</th>
-							<th>Tipo de Assistência</th>
-							<th>Observação</th>
+							<th>Tipo</th>
+							<th>Nome</th>
+							<th>Nº Série</th>
+							<th>Modelo</th>
+							<th>Nº Inventário</th>
+							<th>Localização</th>
 							<th>Ações</th>
                         </tr>  
                     </thead>  
-                 
-						
+					
+				 
 				  <?php 
 					while($linhas = mysql_fetch_array($resultado)){
 						echo "<tr>";
-							echo "<td>".$linhas['idTipo_Assistencia']."</td>";
-							echo "<td>".$linhas['Nome_Tipo_Assistencia']."</td>";
-							echo "<td>".$linhas['Observacao_Tipo_Assistencia']."</td>";
+							echo "<td>".$linhas['idEquipamentos']."</td>";
+							
+							//tipo de equipamento FK
+							$result_cat =mysql_query("SELECT Nome_Tipo_Equipamento FROM tipo_equipamento INNER JOIN 
+							equipamentos ON tipo_equipamento.idTipo_Equipamento = equipamentos.Tipo_Equipamento_idTipo_Equipamento where equipamentos.idEquipamentos = ".$linhas['idEquipamentos'].";");
+							while($dados = mysql_fetch_assoc($result_cat)){
+								echo "<td>".$dados['Nome_Tipo_Equipamento']."</td>";
+							}
+							
+							echo "<td>".$linhas['Nome_Equipamento']."</td>";
+							echo "<td>".$linhas['Numero_Serie']."</td>";
+							echo "<td>".$linhas['Modelo']."</td>";
+							echo "<td>".$linhas['Numero_Inventario']."</td>";
+							echo "<td>".$linhas['Local_Instalacao']."</td>";
 							?>
 							
 							<td> 
-							<a href='tipo_Assistencia_Visualizar.php?id=<?php echo $linhas['idTipo_Assistencia']; ?>''><img src='imagens/info.ico' width='30px'></a>
-							<a href='tipo_Assistencia_Editar_Formulario.php?id=<?php echo $linhas['idTipo_Assistencia']; ?>'><img src='imagens/edit.ico' width='30px'></a>
-							<a href="#" onclick="javascript: if (confirm('Deseja remover este registo?'))location.href='tipo_Assistencia_Eliminar.php?id=<?php echo $linhas['idTipo_Assistencia']; ?>'"><img src='imagens/edit_delete.png' width='30px'></a>
+							<a href='equipamentos_Visualizar.php?id=<?php echo $linhas['idEquipamentos']; ?>'><img src='imagens/info.ico' width='30px'></a>
+							<a href='equipamentos_Editar_Formulario.php?id=<?php echo $linhas['idEquipamentos']; ?>'><img src='imagens/edit.ico' width='30px'></a>
+							<a href="#" onclick="javascript: if (confirm('Deseja remover este registo?'))location.href='equipamentos_Eliminar.php?id=<?php echo $linhas['idEquipamentos']; ?>'"><img src='imagens/edit_delete.png' width='30px'></a>
 							<?php
 						echo "</tr>";
 					}
@@ -65,9 +79,8 @@ include_once("menu_Pagina_Inicial.php");
                      </table>  
                 </div>  
            </div>  
+		   
       </body>  
-	
-	  
 	  
 	  
 	      <!-- Bootstrap core JavaScript
