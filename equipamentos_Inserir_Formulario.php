@@ -29,7 +29,7 @@ include_once("conexao.php");
   <body role="document">
 	<?php
 		include_once("menu_Pagina_Inicial.php");	
-	  
+
 		if(isset($_SESSION['post_data'])){
 			$_POST 						= $_SESSION['post_data'];
 			$nome_equipamento			= $_POST["nome_equipamento"];
