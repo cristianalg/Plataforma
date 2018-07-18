@@ -13,7 +13,7 @@ include_once("conexao.php");
     <meta name="description" content="Página Inicial">
     <meta name="author" content="Cristiana">
 
-    <title>Equipamentos</title>
+    <title>Software</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/bootstrap-theme.min.css" rel="stylesheet">
     <link href="css/theme.css" rel="stylesheet">
@@ -33,40 +33,32 @@ include_once("conexao.php");
 		include_once("menu_Pagina_Inicial.php");	
 		$id = $_GET['id'];
 		//Executa consulta
-		$result = mysql_query("SELECT * FROM equipamentos WHERE idEquipamentos = '$id'");
+		$result = mysql_query("SELECT * FROM software WHERE idSoftware = '$id'");
 		$resultado = mysql_fetch_assoc($result);  //mysql_fetch_assoc - Obtém uma linha do resultado como um array associativo
 	?>
 
+	
+<!--********************DATA***************************************************************-->
+<!-- Special version of Bootstrap that only affects content wrapped in .bootstrap-iso -->
+<link rel="stylesheet" href="https://formden.com/static/cdn/bootstrap-iso.css" /> 
+<!--Font Awesome (added because you use icons in your prepend/append)-->
+<link rel="stylesheet" href="https://formden.com/static/cdn/font-awesome/4.4.0/css/font-awesome.min.css" />
+<!-- Inline CSS based on choices in "Settings" tab -->
+<style>.bootstrap-iso .formden_header h2, .bootstrap-iso .formden_header p, .bootstrap-iso form{font-family: Arial, Helvetica, sans-serif; color: black}.bootstrap-iso form button, .bootstrap-iso form button:hover{color: white !important;} .asteriskField{color: red;}</style>
+
+
+	
+	
 <div class="container theme-showcase" role="main">      
   <div class="page-header">
-	<h1>Editar Equipamento</h1>
+	<h1>Editar Software</h1>
   </div>
   
 	
   <div class="row">
 	<div class="col-md-12">
-	  <form class="form-horizontal" method="POST" action="equipamentos_Editar.php" enctype="multipart/form-data">
+	  <form class="form-horizontal" method="POST" action="software_Editar.php" enctype="multipart/form-data">
 		
-		<?php $tipo_EquipamentoFK_id = $resultado['Tipo_Equipamento_idTipo_Equipamento'];?>
-		<div class="form-group">
-			<label for="inputEmail3" class="col-sm-2 control-label">Tipo de Equipamento</label>
-			<div class="col-sm-10">
-			<select class="form-control" name="idtipo_equipamento">
-				<?php 
-						$result_equi =mysql_query("SELECT idTipo_Equipamento, Nome_Tipo_Equipamento  FROM tipo_equipamento");
-						while($dados = mysql_fetch_assoc($result_equi)){
-							$id_tipo_EquipamentoPK = $dados['idTipo_Equipamento'];
-							?>
-								<option value="<?php echo $dados["idTipo_Equipamento"]; ?>"
-								<?php if($id_tipo_EquipamentoPK == $tipo_EquipamentoFK_id){ echo 'selected'; } ?>
-								><?php echo $dados["Nome_Tipo_Equipamento"];?></option>
-							<?php
-						}
-				?>	
-				</select>
-			</div>
-		</div>
-		  
 		 <?php $departamentoFK_id = $resultado['Registo_Postos_Trabalho_Departamento_idDepartamento'];?>
 		<div class="form-group">
 			<label for="inputEmail3" class="col-sm-2 control-label">Departamento</label>
@@ -95,11 +87,9 @@ include_once("conexao.php");
 		
 		<?php $tipo_RequerenteFK_id = $resultado['Registo_Postos_Trabalho_Requerente_idRequerente'];?>
 				<div class="form-group">
-			<label for="inputPassword3" class="col-sm-2 control-label">Nome do Requerente</font></label>
+			<label for="inputPassword3" class="col-sm-2 control-label">Nome do Requerente</label>
 			<div class="col-sm-10">
-			<!-- <span class="carregando">Aguarde, carregando...</span> -->
 			<select class="form-control" name="idrequerente" id="idrequerente">
-				<!--<option value="">Selecione o Tipo de Requerente</option> -->
 				
 				<?php
 					//$result_req =mysql_query("SELECT idRequerente, Nome_Requerente  FROM requerente WHERE Tipo_Requerente_idTipo_Requerente = ".$var_idTipo." ORDER BY Nome_Requerente");
@@ -124,101 +114,63 @@ include_once("conexao.php");
 
 		
 		  <div class="form-group">
-			<label for="inputEmail3" class="col-sm-2 control-label">Nome do Equipamento</label>
+			<label for="inputEmail3" class="col-sm-2 control-label">Nome do Software</label>
 			<div class="col-sm-10">
-			  <input type="text" class="form-control" name="nome_equipamento" placeholder="Nome do Equipamento" value="<?php echo $resultado['Nome_Equipamento']; ?>">
+			  <input type="text" class="form-control" name="nome_software" placeholder="Nome do Software" value="<?php echo $resultado['Nome_Software']; ?>">
 			</div>
 		  </div>
 		  
 		   <div class="form-group">
-			<label for="inputEmail3" class="col-sm-2 control-label">Nº de Série</label>
+			<label for="inputEmail3" class="col-sm-2 control-label">Versão</label>
 			<div class="col-sm-10">
-			  <input type="text" class="form-control" name="numero_serie" placeholder="Número de Série" value="<?php echo $resultado['Numero_Serie']; ?>">
-			</div>
-		  </div>
-		  
-		   <div class="form-group">
-			<label for="inputEmail3" class="col-sm-2 control-label">Marca</label>
-			<div class="col-sm-10">
-			  <input type="text" class="form-control" name="marca" placeholder="Marca" value="<?php echo $resultado['Marca']; ?>">
-			</div>
-		  </div>
-		
-		   <div class="form-group">
-			<label for="inputEmail3" class="col-sm-2 control-label">Modelo</label>
-			<div class="col-sm-10">
-			  <input type="text" class="form-control" name="modelo" placeholder="Modelo" value="<?php echo $resultado['Modelo']; ?>">
-			</div>
-		  </div>
-		  
-		   <div class="form-group">
-			<label for="inputEmail3" class="col-sm-2 control-label">Nº de Inventário</label>
-			<div class="col-sm-10">
-			  <input type="text" class="form-control" name="numero_inventario" placeholder="Número de Inventário" value="<?php echo $resultado['Numero_Inventario']; ?>">
-			</div>
-		  </div>
-		  
-		   <div class="form-group">
-			<label for="inputEmail3" class="col-sm-2 control-label">Local de Instalação</label>
-			<div class="col-sm-10">
-			  <input type="text" class="form-control" name="local_instalacao" placeholder="Local de Instalação" value="<?php echo $resultado['Local_Instalacao']; ?>">
-			</div>
-		  </div>
-		  
-		   <div class="form-group">
-			<label for="inputEmail3" class="col-sm-2 control-label">Contacto</label>
-			<div class="col-sm-10">
-			  <input type="text" class="form-control" name="contacto" placeholder="Contacto" value="<?php echo $resultado['Contacto']; ?>">
-			</div>
-		  </div>
-			  
-		   <div class="form-group">
-			<label for="inputEmail3" class="col-sm-2 control-label">Estado do Material</label>
-			<div class="col-sm-10">
-			  <input type="text" class="form-control" name="estado_material" placeholder="Estado do Material" value="<?php echo $resultado['Estado_Material']; ?>">
-			</div>
-		  </div>
-		    
-		   <div class="form-group">
-			<label for="inputEmail3" class="col-sm-2 control-label">User Internet</label>
-			<div class="col-sm-10">
-			  <input type="text" class="form-control" name="user_acesso_internet" placeholder="User de acesso à internet" value="<?php echo $resultado['User_Acesso_Internet']; ?>">
+			  <input type="text" class="form-control" name="versao" placeholder="Versão" value="<?php echo $resultado['Versao']; ?>">
 			</div>
 		  </div>
 		   
 		   <div class="form-group">
-			<label for="inputEmail3" class="col-sm-2 control-label">Password Internet</label>
-			<div class="col-sm-10">
-			  <input type="text" class="form-control" name="password_acesso_internet" placeholder="Password de acesso à internet" value="<?php echo $resultado['Password_Acesso_Internet']; ?>">
+				<label class="control-label col-sm-2 requiredField" for="date">Data de Registo<font color="red" size="4">&nbsp*</font></label>
+				<div class="col-sm-3">
+					<div class="input-group">
+						<div class="input-group-addon">
+							<i class="fa fa-calendar">
+							</i>
+						</div>
+						<input class="form-control" onclick="func_data_registo()" id="data_registo" name="data_registo" placeholder="YYYY/MM/DD" type="text" value="<?php echo $resultado['Data_Registo']; ?>"/>
+					</div>
+				</div>
 			</div>
-		  </div>
-		  
+		   
 		   <div class="form-group">
-			<label for="inputEmail3" class="col-sm-2 control-label">User Equipamento</label>
-			<div class="col-sm-10">
-			  <input type="text" class="form-control" name="username_equipamento" placeholder="User de acesso ao equipamento" value="<?php echo $resultado['Username_Equipamento']; ?>">
+				<label class="control-label col-sm-2 requiredField" for="date">Data de Início<font color="red" size="4">&nbsp*</font></label>
+				<div class="col-sm-3">
+					<div class="input-group">
+						<div class="input-group-addon">
+							<i class="fa fa-calendar">
+							</i>
+						</div>
+						<input class="form-control" onclick="func_data_inicio_contrato()" id="data_inicio_contrato" name="data_inicio_contrato" placeholder="YYYY/MM/DD" type="text" value="<?php echo $resultado['Data_Inicio_Contrato']; ?>"/>
+					</div>
+				</div>
 			</div>
-		  </div>
-		  
+		   
 		   <div class="form-group">
-			<label for="inputEmail3" class="col-sm-2 control-label">Password Equipamento</label>
-			<div class="col-sm-10">
-			  <input type="text" class="form-control" name="password_equipamento" placeholder="Password de acesso ao equipamento" value="<?php echo $resultado['Password_Equipamento']; ?>">
+				<label class="control-label col-sm-2 requiredField" for="date">Data de Fim<font color="red" size="4">&nbsp*</font></label>
+				<div class="col-sm-3">
+					<div class="input-group">
+						<div class="input-group-addon">
+							<i class="fa fa-calendar">
+							</i>
+						</div>
+						<input class="form-control" onclick="func_data_renovacao_contrato()" id="data_renovacao_contrato" name="data_renovacao_contrato" placeholder="YYYY/MM/DD" type="text" value="<?php echo $resultado['Data_Renovacao_Contrato']; ?>"/>
+					</div>
+				</div>
 			</div>
-		  </div>
-		  
-		   <div class="form-group">
-			<label for="inputEmail3" class="col-sm-2 control-label">Contacto de Suporte</label>
-			<div class="col-sm-10">
-			  <input type="text" class="form-control" name="contacto_suporte" placeholder="Contacto de Suporte" value="<?php echo $resultado['Contacto_Suporte']; ?>">
-			</div>
-		  </div>
-		  
+		   
 		<div class="form-group">
 			<label for="inputEmail3" class="col-sm-2 control-label">Observação</label>
 			<div class="col-sm-10">
 				<?php
-					echo '<textarea class="form-control" rows="3" name="observacao_equipamento">'. $resultado['Observacao_Equipamento']. '</textarea>';
+					echo '<textarea class="form-control" rows="3" name="observacao_software">'. $resultado['Observacao_Software']. '</textarea>';
 				?>
 			</div>
 		  </div>
@@ -227,23 +179,23 @@ include_once("conexao.php");
 		 <div class="form-group">
 			<label for="inputEmail3" class="col-sm-2 control-label">Atualizar Cópia da Fatura (.PDF)</label>
 			<div class="col-sm-10">
-				<input type="file" name="copia_fatura" id="copia_fatura"/>
+				<input type="file" name="copia_fatura" id="copia_fatura" accept="application/pdf"/>
 			</div>
 		</div>
 		
 		
 		
 		 <div class="form-group">
-			<label for="inputEmail3" class="col-sm-2 control-label">Atualizar ficheiro de configuração (.ZIP)</label>
+			<label for="inputEmail3" class="col-sm-2 control-label">Atualizar Contrato/Protocolo (.PDF)</label>
 			<div class="col-sm-10">
-				<input type="file" name="ficheiro_configuracao" id="ficheiro_configuracao"/>
+				<input type="file" name="contrato_protocolo" id="contrato_protocolo" accept="application/pdf"/>
 			</div>
 		</div>
 		  
 		  
 		  
 		  
-		  <input type="hidden" name="numeroid" value="<?php echo $resultado['idEquipamentos']; ?>">
+		  <input type="hidden" name="numeroid" value="<?php echo $resultado['idSoftware']; ?>">
 		  <div class="form-group">
 			<div class="col-sm-offset-2 col-sm-10">
 			  <button type="submit" class="btn btn-success">Editar</button>
@@ -297,4 +249,57 @@ include_once("conexao.php");
     <script src="js/ie10-viewport-bug-workaround.js"></script>
   </body>
 </html>
+
+
+<!--********************DATA***************************************************************-->
+<!-- Extra JavaScript/CSS added manually in "Settings" tab -->
+<!-- Include jQuery -->
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+<!-- Include Date Range Picker -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+
+<script>
+	function func_data_registo(){
+	//$(document).ready(function(){
+		var date_input=$('input[name="data_registo"]'); //our date input has the name "date"
+		var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
+		date_input.datepicker({
+			format: 'yyyy/mm/dd',
+			container: container,
+			todayHighlight: true,
+			autoclose: true,
+		})
+	//})
+	}
+	
+	function func_data_inicio_contrato(){
+	//$(document).ready(function(){
+		var date_input=$('input[name="data_inicio_contrato"]'); //our date input has the name "date"
+		var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
+		date_input.datepicker({
+			format: 'yyyy/mm/dd',
+			container: container,
+			todayHighlight: true,
+			autoclose: true,
+		})
+	//})
+	}
+	
+	function func_data_renovacao_contrato(){
+	//$(document).ready(function(){
+		var date_input=$('input[name="data_renovacao_contrato"]'); //our date input has the name "date"
+		var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
+		date_input.datepicker({
+			format: 'yyyy/mm/dd',
+			container: container,
+			todayHighlight: true,
+			autoclose: true,
+		})
+	//})
+	}
+	
+</script>
+
 

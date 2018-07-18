@@ -92,7 +92,7 @@ html, body {height:100%;}
 		<li class="dropdown">
 		  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sistema <span class="caret"></span></a>
 		  <ul class="dropdown-menu">
-			<li><a href="#">Software</a></li>     
+			<li><a href="software_Listar.php">Software</a></li>     
 			<li><a href="sistema_Operativo_Listar.php">Sistema Operativo</a></li>
 			<li><a href="office_Listar.php">Office</a></li>
 			<li><a href="#">Aplicativos & AIRC</a></li>

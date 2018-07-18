@@ -31,8 +31,18 @@
 		$sql = mysql_query("DELETE FROM equipamentos WHERE idEquipamentos = '".$id."'");
 		 
 		// Remove imagem da pasta das fotos/
-		unlink("Anexos_Equipamentos/".$img->Copia_Fatura."");
-		unlink("Anexos_Equipamentos/".$img->Ficheiro_Configuracao."");
+		/*unlink("Anexos_Equipamentos/".$img->Copia_Fatura."");
+		unlink("Anexos_Equipamentos/".$img->Ficheiro_Configuracao."");*/
+		
+		if(($linhas['Copia_Fatura'] != NULL)){
+			unlink("Anexos_Equipamentos/".$img->Copia_Fatura."");
+		}
+		
+		if(($linhas['Ficheiro_Configuracao'] != NULL)){
+			unlink("Anexos_Equipamentos/".$img->Ficheiro_Configuracao."");
+		}
+		 
+		
 		echo "
 			<script type=\"text/javascript\">
 			alert('Removido com sucesso!'); 
