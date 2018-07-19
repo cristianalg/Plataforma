@@ -39,8 +39,7 @@
 
 		
 	if($nome_equipamento == "" || $numero_serie == "" || $marca == "" || $modelo == "" || $numero_inventario == "" ||$local_instalacao == "" 
-	|| $contacto == "" || $estado_material == "" || $user_acesso_internet == "" || $password_acesso_internet == "" || $username_equipamento == "" 
-	|| $password_equipamento == "" || $contacto_suporte == "" || $idtipo_equipamento == "" || $iddepartamento == "" || $idrequerente == "")
+	|| $contacto == "" || $estado_material == ""|| $idtipo_equipamento == "" || $iddepartamento == "" || $idrequerente == "")
 	{
 		echo "<script language='javascript' type='text/javascript' text-align:'center' > 
 			alert('Os campos com (*) são de preenchimento obrigatório.'); ";

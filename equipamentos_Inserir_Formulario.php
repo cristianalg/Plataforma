@@ -174,35 +174,35 @@ include_once("conexao.php");
 			  </div>  
 		    
 			  <div class="form-group">
-				<label for="inputEmail3" class="col-sm-2 control-label">User Internet<font color="red" size="4">&nbsp*</font></label>
+				<label for="inputEmail3" class="col-sm-2 control-label">User Internet</label>
 				<div class="col-sm-10">
 				  <input type="text" class="form-control" name="user_acesso_internet" placeholder="User de acesso à internet" value="<?php if(isset($_POST["user_acesso_internet"])){ echo $_POST["user_acesso_internet"];} ?>">
 				</div>
 			  </div>
 			  
 			  <div class="form-group">
-				<label for="inputEmail3" class="col-sm-2 control-label">Password Internet<font color="red" size="4">&nbsp*</font></label>
+				<label for="inputEmail3" class="col-sm-2 control-label">Password Internet</label>
 				<div class="col-sm-10">
 				  <input type="text" class="form-control" name="password_acesso_internet" placeholder="Password de acesso à internet" value="<?php if(isset($_POST["password_acesso_internet"])){ echo $_POST["password_acesso_internet"];} ?>">
 				</div>
 			  </div>
 			  
 			   <div class="form-group">
-				<label for="inputEmail3" class="col-sm-2 control-label">User Equipamento<font color="red" size="4">&nbsp*</font></label>
+				<label for="inputEmail3" class="col-sm-2 control-label">User Equipamento</label>
 				<div class="col-sm-10">
 				  <input type="text" class="form-control" name="username_equipamento" placeholder="User de acesso ao equipamento" value="<?php if(isset($_POST["username_equipamento"])){ echo $_POST["username_equipamento"];} ?>">
 				</div>
 			  </div>
 			  
 			  <div class="form-group">
-				<label for="inputEmail3" class="col-sm-2 control-label">Password Equipamento<font color="red" size="4">&nbsp*</font></label>
+				<label for="inputEmail3" class="col-sm-2 control-label">Password Equipamento</label>
 				<div class="col-sm-10">
 				  <input type="text" class="form-control" name="password_equipamento" placeholder="Password de acesso ao equipamento" value="<?php if(isset($_POST["password_equipamento"])){ echo $_POST["password_equipamento"];} ?>">
 				</div>
 			  </div>
 			  
 			  <div class="form-group">
-				<label for="inputEmail3" class="col-sm-2 control-label">Contacto de Suporte<font color="red" size="4">&nbsp*</font></label>
+				<label for="inputEmail3" class="col-sm-2 control-label">Contacto de Suporte</label>
 				<div class="col-sm-10">
 				  <input type="text" type="tel" class="form-control" name="contacto_suporte" placeholder="Contacto de suporte" value="<?php if(isset($_POST["contacto_suporte"])){ echo $_POST["contacto_suporte"];} ?>">
 				</div>

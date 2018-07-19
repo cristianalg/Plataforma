@@ -61,7 +61,7 @@ include_once("conexao.php");
 
 	<div class="container theme-showcase" role="main">      
 		<div class="page-header">
-        <h1>Inserir Equipamento</h1>
+        <h1>Inserir Software</h1>
 		</div>
 		<p><font color="red" size="4">*</font> <font size="2">Campos de preenchimento obrigatório </font></p>
  

@@ -81,7 +81,8 @@ html, body {height:100%;}
 			  <li><a href="tipo_Assistencia_Listar.php">  &nbsp Tipo de Assistências</a></li>
 			  <li><a href="#">  &nbsp Assistências</a></li> 
 			  <li class="divider"></li>
-			<li><a href="pdf_Inserir_Formulario.php">Inserir Instalação Computadores</a></li>
+			<li><a href="requisicao_Material_Listar.php">Requisição de Material</a></li>
+				  <li class="divider"></li>
 			<li><a href="teste_Inicio.php">Listar Instalação Computadores</a></li>
 			
 			<li><a href="aaaa.php">Inserir Configuração Equipamentos</a></li>  
