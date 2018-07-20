@@ -56,15 +56,15 @@ html, body {height:100%;}
 		  <ul class="dropdown-menu">
 			  <li><a href="tecnico_Listar.php">TÉCNICOS</a></li>
 			  <li class="divider"></li>
-			  <li><a href="#">REQUERENTES</a></li> 
+			  <li><b>&nbsp &nbsp  REQUERENTES</b></li> 
 			  <li><a href="tipo_Requerente_Listar.php">  &nbsp Tipo de requerente</a></li>
 			  <li><a href="requerente_Listar.php">  &nbsp Requerentes</a></li> 
 			  <li class="divider"></li> 	
-			  <li><a href="#">POSTOS DE TRABALHO</a></li> 
+			  <li><b>&nbsp &nbsp  POSTOS DE TRABALHO</b></li> 
 			  <li><a href="departamento_Listar.php">  &nbsp Departamentos</a></li>
 			  <li><a href="posto_Trabalho_Listar.php">  &nbsp Postos de Trabalho</a></li> 
 			  <li class="divider"></li>
-			  <li><a href="#">EQUIPAMENTOS</a></li> 
+			  <li><b>&nbsp &nbsp EQUIPAMENTOS</b></li> 
 			  <li><a href="tipo_Equipamento_Listar.php">  &nbsp Tipo de Equipamentos</a></li>
 			  <li><a href="equipamentos_Listar.php">  &nbsp Equipamentos</a></li> 
 		  </ul>
@@ -77,12 +77,14 @@ html, body {height:100%;}
 		<li class="dropdown">
 		  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Assistências Técnicas <span class="caret"></span></a>
 		  <ul class="dropdown-menu">
-			<li><a>ASSISTÊNCIAS</a></li> 
+			 <li><b>&nbsp &nbsp  ASSISTÊNCIAS</b></li> 
 			  <li><a href="tipo_Assistencia_Listar.php">  &nbsp Tipo de Assistências</a></li>
 			  <li><a href="#">  &nbsp Assistências</a></li> 
 			  <li class="divider"></li>
-			<li><a href="requisicao_Material_Listar.php">Requisição de Material</a></li>
-				  <li class="divider"></li>
+			<li><a href="requisicao_Material_Listar.php">REQUISIÇÃO DE MATERIAL</a></li>
+			<li class="divider"></li>
+			<li><a href="requerimento_Listar.php">REQUERIMENTOS</a></li>  
+			<li class="divider"></li>
 			<li><a href="teste_Inicio.php">Listar Instalação Computadores</a></li>
 			
 			<li><a href="aaaa.php">Inserir Configuração Equipamentos</a></li>  
@@ -93,18 +95,10 @@ html, body {height:100%;}
 		<li class="dropdown">
 		  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sistema <span class="caret"></span></a>
 		  <ul class="dropdown-menu">
-			<li><a href="software_Listar.php">Software</a></li>     
-			<li><a href="sistema_Operativo_Listar.php">Sistema Operativo</a></li>
-			<li><a href="office_Listar.php">Office</a></li>
-			<li><a href="#">Aplicativos & AIRC</a></li>
-		  </ul>
-		</li>
-		
-		<li class="dropdown">
-		  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Requerimentos<span class="caret"></span></a>
-		  <ul class="dropdown-menu">
-		  <li><a href="aaaa.php">Inserir Requerimento</a></li>   
-			<li><a href="teste_Inicio.php">Listar Requerimentos</a></li>             
+			<li><a href="software_Listar.php">SOFTWARE</a></li>     
+			<li><a href="sistema_Operativo_Listar.php">SISTEMA OPERATIVO</a></li>
+			<li><a href="office_Listar.php">OFFICE</a></li>
+			<li><a href="#">APLICATIVOS & AIRC</a></li>
 		  </ul>
 		</li>
 		
