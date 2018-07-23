@@ -3,11 +3,6 @@ session_start();
 include_once("seguranca.php");
 include_once("conexao.php");
 $id = $_GET["id"];
-
-$query = "DELETE FROM tipo_assistencia WHERE idTipo_Assistencia = $id";
-$resultado = mysql_query($query);
-$linhas = mysql_affected_rows();
-
 ?>
 
 <!DOCTYPE html>
@@ -18,26 +13,31 @@ $linhas = mysql_affected_rows();
 
 	<body>
 		<?php
-		if (mysql_affected_rows() != 0 ){	
-			echo "
-				<script type=\"text/javascript\">
-						alert('Removido com sucesso!'); 
-						 window.location.replace('tipo_Assistencia_Listar.php'); </script>
-				</script>
-			";	
+			$result = mysql_query("SELECT Tipo_Assistencia_idTipo_Assistencia FROM assistencia_tecnica WHERE Tipo_Assistencia_idTipo_Assistencia ='$id'");
+			
+			$dados = mysql_fetch_assoc($result);
+			$var_id = $dados['Tipo_Assistencia_idTipo_Assistencia'];	
+		
 				
-				   
-		}
-		 else{ 	
+			if ($var_id > 0){ 
+					  
 				echo "
-				<script type=\"text/javascript\">
-						alert('Não removido!'); 
-						 window.location.replace('tipo_Assistencia_Listar.php'); </script>
-				</script>
-			";		   
-
-		}
-//mysql_query($query) OR DIE(mysql_error());
+					<script type=\"text/javascript\">
+						alert('Não pode eliminar este tipo de assistência técnica porque existem assistências técnicas associadas a ele.'); 
+						window.location.replace('tipo_Assistencia_Listar.php'); </script>
+					</script>
+				";	
+			} 
+			else{
+				$sql = mysql_query("DELETE FROM tipo_assistencia WHERE idTipo_Assistencia = $id");
+				echo "
+					<script type=\"text/javascript\">
+						alert('Removido com sucesso!'); 
+						window.location.replace('tipo_Assistencia_Listar.php'); </script>
+					</script>";
+					
+			}
+		
 		?>
 	</body>
 </html>

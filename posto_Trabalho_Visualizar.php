@@ -69,7 +69,7 @@ include_once("conexao.php");
 		<div class="pull-right">
 			<a href='posto_Trabalho_Listar.php'><img src="imagens/list.png" width="30px"></a></a>
 			<a href='posto_Trabalho_Editar_Formulario.php?id=<?php echo $resultado['idRegisto_Postos_Trabalho']; ?>'><img src="imagens/edit.ico" width="30px"></a></a>
-			<a href='posto_Trabalho_Eliminar.php?id=<?php echo $resultado['idRegisto_Postos_Trabalho']; ?>'><img src='imagens/edit_delete.png' width='30px'></a>
+			<a href="#" onclick="javascript: if (confirm('Deseja remover este registo?'))location.href='posto_Trabalho_Eliminar.php?id=<?php echo $resultado['idRegisto_Postos_Trabalho']; ?>'"><img src='imagens/edit_delete.png' width='30px'></a>
 		</div>
 	</div> 
 	

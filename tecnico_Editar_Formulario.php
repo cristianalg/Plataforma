@@ -90,7 +90,7 @@ include_once("conexao.php");
 		  </div>
 		  
 		  <div class="form-group">
-			<label for="inputEmail3" class="col-sm-2 control-label">User</label>
+			<label for="inputEmail3" class="col-sm-2 control-label">Login</label>
 			<div class="col-sm-10">
 			  <input type="text" class="form-control" name="user" placeholder="User" value="<?php echo $resultado['User']; ?>">
 			</div>

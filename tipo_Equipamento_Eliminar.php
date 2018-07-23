@@ -2,12 +2,6 @@
 session_start();
 include_once("seguranca.php");
 include_once("conexao.php");
-$id = $_GET["id"];
-
-$query = "DELETE FROM tipo_equipamento WHERE idTipo_Equipamento = $id";
-$resultado = mysql_query($query);
-$linhas = mysql_affected_rows();
-
 ?>
 
 <!DOCTYPE html>
@@ -18,26 +12,32 @@ $linhas = mysql_affected_rows();
 
 	<body>
 		<?php
-		if (mysql_affected_rows() != 0 ){	
-			echo "
-				<script type=\"text/javascript\">
-						alert('Removido com sucesso!'); 
-						 window.location.replace('tipo_Equipamento_Listar.php'); </script>
-				</script>
-			";	
+			$id = $_GET["id"];
+			
+			$result = mysql_query("SELECT Tipo_Equipamento_idTipo_Equipamento FROM equipamentos WHERE Tipo_Equipamento_idTipo_Equipamento ='$id'");
+			
+			$dados = mysql_fetch_assoc($result);
+			$var_id = $dados['Tipo_Equipamento_idTipo_Equipamento'];	
+		
 				
-				   
-		}
-		 else{ 	
+			if ($var_id > 0){ 
+					  
 				echo "
-				<script type=\"text/javascript\">
-						alert('Não removido!'); 
-						 window.location.replace('tipo_Equipamento_Listar.php'); </script>
-				</script>
-			";		   
-
-		}
-//mysql_query($query) OR DIE(mysql_error());
+					<script type=\"text/javascript\">
+						alert('Não pode eliminar este tipo de equipamento porque existem equipamentos associados a ele.'); 
+						window.location.replace('tipo_Equipamento_Listar.php'); </script>
+					</script>
+				";	
+			} 
+			else{
+				$sql = mysql_query("DELETE FROM tipo_equipamento WHERE idTipo_Equipamento = $id");
+				echo "
+					<script type=\"text/javascript\">
+						alert('Removido com sucesso!'); 
+						window.location.replace('tipo_Equipamento_Listar.php'); </script>
+					</script>";
+					
+			}
 		?>
 	</body>
 </html>

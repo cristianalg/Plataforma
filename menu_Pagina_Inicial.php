@@ -75,20 +75,26 @@ html, body {height:100%;}
 	
 		
 		<li class="dropdown">
-		  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Assistências Técnicas <span class="caret"></span></a>
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Assistências Técnicas <span class="caret"></span></a>
+			<ul class="dropdown-menu">
+			  <li><a href="tipo_Assistencia_Listar.php"> Tipo de Assistências</a></li>
+			  <li><a href="estado_Assistencia_Listar.php">Estado das Assistências</a></li>
+			  <li><a href="assistencia_Tecnica_Listar.php"> Assistências Técnicas</a></li>
+			  <li><a href="assistencia_Tecnica_Imprimir_Listar.php"> Relatório de Atividades</a></li>			  
+			</ul>
+		</li>
+		
+		<li class="dropdown">
+		  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Requisição de Material<span class="caret"></span></a>
 		  <ul class="dropdown-menu">
-			 <li><b>&nbsp &nbsp  ASSISTÊNCIAS</b></li> 
-			  <li><a href="tipo_Assistencia_Listar.php">  &nbsp Tipo de Assistências</a></li>
-			  <li><a href="#">  &nbsp Assistências</a></li> 
-			  <li class="divider"></li>
-			<li><a href="requisicao_Material_Listar.php">REQUISIÇÃO DE MATERIAL</a></li>
-			<li class="divider"></li>
-			<li><a href="requerimento_Listar.php">REQUERIMENTOS</a></li>  
-			<li class="divider"></li>
-			<li><a href="teste_Inicio.php">Listar Instalação Computadores</a></li>
-			
-			<li><a href="aaaa.php">Inserir Configuração Equipamentos</a></li>  
-			<li><a href="teste_Inicio.php">Listar Configuração Equipamentos</a></li>
+			<li><a href="requisicao_Material_Listar.php">Listar</a></li>             
+		  </ul>
+		</li>
+		
+		<li class="dropdown">
+		  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Requerimentos<span class="caret"></span></a>
+		  <ul class="dropdown-menu">
+			<li><a href="requerimento_Listar.php">Listar</a></li>             
 		  </ul>
 		</li>
 		
@@ -102,14 +108,14 @@ html, body {height:100%;}
 		  </ul>
 		</li>
 		
+		<!--
 		<li class="dropdown">
 		  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Relatório Atividades<span class="caret"></span></a>
 		  <ul class="dropdown-menu">
-		  <li><a href="aaaa.php">Inserir</a></li>   
-			<li><a href="teste_Inicio.php">Listar</a></li>             
+			<li><a href="assistencia_Tecnica_Imprimir_Listar.php">Listar</a></li>             
 		  </ul>
 		</li>
-		
+		-->
 
 		 
 		<li><a href="sair.php"><img src="imagens/LOGOUT.png">&nbsp Sair</a></li> 

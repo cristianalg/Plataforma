@@ -35,6 +35,8 @@ include_once("seguranca.php");
 			$user 					= $_POST["user"];
 			$password 				= $_POST["password"];
 			$observacao_tecnico 	= $_POST["observacao_tecnico"];
+			
+			$passwordc = $_POST['passwordc'];
 		}
 		
 
@@ -94,7 +96,7 @@ include_once("seguranca.php");
 			  </div>  
 		    
 			  <div class="form-group">
-				<label for="inputPassword3" class="col-sm-2 control-label">User<font color="red" size="4">&nbsp*</font></label>
+				<label for="inputPassword3" class="col-sm-2 control-label">Login<font color="red" size="4">&nbsp*</font></label>
 				<div class="col-sm-10">
 				  <input type="password" class="form-control" name="user" placeholder="@User" value="<?php if(isset($_POST["user"])){ echo $_POST["user"];} ?>">
 				</div>
@@ -106,6 +108,18 @@ include_once("seguranca.php");
 				  <input type="password" class="form-control" name="password" placeholder="Password" value="<?php if(isset($_POST["password"])){ echo $_POST["password"];} ?>">
 				</div>
 			  </div>
+			  
+			   <div class="form-group">
+				<label for="inputPassword3" class="col-sm-2 control-label">Confirmar Password<font color="red" size="4">&nbsp*</font></label>
+				<div class="col-sm-10">
+				  <input type="password" class="form-control" name="passwordc" placeholder="Password" value="<?php if(isset($_POST["passwordc"])){ echo $_POST["passwordc"];} ?>">
+				</div>
+			  </div>
+				
+			 
+			  
+			  
+			  
 			  
 			    <div class="form-group">
 				<label for="inputPassword3" class="col-sm-2 control-label">Observação</label>
@@ -124,8 +138,6 @@ include_once("seguranca.php");
 		</div>
     </div> <!-- /container -->
 
-	
-	
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->

@@ -22,14 +22,35 @@ include_once("seguranca.php");
 	<?php
 		include_once("menu_Pagina_Inicial.php");
 	?>	
-    <div class="container theme-showcase" role="main">      
-      <div class="page-header">
-        <h1>Bem vindo a área administrativa</h1>
-      </div>
-      
-    </div> <!-- /container -->
+ 
 
 
+	
+	<div class="container theme-showcase" role="main">      
+		<div class="page-header">
+			<h1>Bem vindo a área administrativa</h1>
+    </div>
+	
+    <div class="row">
+		<div class="col-md-12">
+			<form class="form-horizontal" method="POST" action="gerarPDF.php" role="form" enctype="multipart/form-data"> 
+			
+			
+				<div class="form-group">
+					<div class="col-sm-offset-2 col-sm-10">
+					  <button type="submit" class="btn btn-success">Gerar PDF</button>
+					</div>
+			  </div>
+			
+			</form>
+		</div>
+	</div>	<!-- /container -->	  
+			
+			
+	
+	
+	
+	
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->

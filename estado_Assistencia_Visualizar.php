@@ -13,7 +13,7 @@ include_once("conexao.php");
     <meta name="description" content="Página Inicial">
     <meta name="author" content="Cristiana">
 
-    <title>Tipo de Requerentes</title>
+    <title>Tipo de Assistências Técnicas</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/bootstrap-theme.min.css" rel="stylesheet">
     <link href="css/theme.css" rel="stylesheet">
@@ -25,46 +25,35 @@ include_once("conexao.php");
 	include_once("menu_Pagina_Inicial.php");	
 	$id = $_GET['id'];
 	//Executa consulta
-	$result = mysql_query("SELECT * FROM tipo_requerente WHERE idTipo_Requerente = '$id'");
+	$result = mysql_query("SELECT * FROM estado  WHERE idEstado = '$id'");
 	$resultado = mysql_fetch_assoc($result);
 ?>
 <div class="container theme-showcase" role="main">      
 	<div class="page-header">
-		<h1>Visualizar Tipo de Requerente</h1>
+		<h1>Visualizar Estado de uma Assistência</h1>
 	</div>
 	
 	 <div class="row">
 		<div class="pull-right">
-			<a href='tipo_Requerente_Listar.php'><img src="imagens/list.png" width="30px"></a></a>
-			<a href='tipo_Requerente_Editar_Formulario.php?id=<?php echo $resultado['idTipo_Requerente']; ?>'><img src="imagens/edit.ico" width="30px"></a></a>
-			<a href="#" onclick="javascript: if (confirm('Deseja remover este registo?'))location.href='tipo_requerente_Eliminar.php?id=<?php echo $resultado['idTipo_Requerente']; ?>'"><img src='imagens/edit_delete.png' width='30px'></a>
+			<a href='estado_Assistencia_Listar.php'><img src="imagens/list.png" width="30px"></a></a>
+			<a href='estado_Assistencia_Editar_Formulario.php?id=<?php echo $resultado['idEstado']; ?>'><img src="imagens/edit.ico" width="30px"></a>
+			<a href="#" onclick="javascript: if (confirm('Deseja remover este registo?'))location.href='estado_Assistencia_Eliminar.php?id=<?php echo $resultado['idEstado']; ?>'"><img src='imagens/edit_delete.png' width='30px'></a>
 		</div>
-	</div> 
+	</div>  
 	
 	<div class="row">
 		<div class="col-md-12">
-			
-			<div>
+				<div>
 				<b>Id:</b>
-				<?php echo $resultado['idTipo_Requerente']; ?>
+				<?php echo $resultado['idEstado']; ?>
 			</div>
 			<br>
 			
 			<div>
-				<b>Tipo de Requerente:</b>
-			<?php echo $resultado['Nome_Tipo_Requerente']; ?>
+				<b>Estado da Assistência:</b>
+			<?php echo $resultado['Nome_Estado_Assistencia']; ?>
 			</div>
 			<br>
-				
-			<div>
-				<b>Tipo de Entidade:</b>
-				<?php echo $resultado['Tipo_Entidade']; ?>
-			</div>
-			<br>
-			<div>
-				<b>Observação:</b>
-			<?php echo $resultado['Observacao_Tipo_Requerente']; ?>
-			</div>
 		</div>  
 	</div>
 </div> <!-- /container -->

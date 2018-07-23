@@ -35,9 +35,9 @@ include_once("conexao.php");
 	
 	 <div class="row">
 		<div class="pull-right">
-			<a href='requerimento_Listar.php'><img src="imagens/list.png" width="30px"></a></a>
-			<a href='requerimento_Editar_Formulario.php?id=<?php echo $resultado['idRequerimento']; ?>'><img src="imagens/edit.ico" width="30px"></a></a>
-			<a href='requerimento_Eliminar.php?id=<?php echo $resultado['idRequerimento']; ?>'><img src='imagens/edit_delete.png' width='30px'></a>
+			<a href='requerimento_Listar.php'><img src="imagens/list.png" width="30px"></a>
+			<a href='requerimento_Editar_Formulario.php?id=<?php echo $resultado['idRequerimento']; ?>'><img src="imagens/edit.ico" width="30px"></a>
+			<a href="#" onclick="javascript: if (confirm('Deseja remover este registo?'))location.href='requerimento_Eliminar.php?id=<?php echo $resultado['idRequerimento']; ?>'"><img src='imagens/edit_delete.png' width='30px'></a>
 		</div>
 	</div> 
 	
