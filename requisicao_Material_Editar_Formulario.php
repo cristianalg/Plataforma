@@ -229,7 +229,7 @@ include_once("conexao.php");
 		  <input type="hidden" name="numeroid" value="<?php echo $resultado['idRequisicao_Material']; ?>">
 		  <div class="form-group">
 			<div class="col-sm-offset-2 col-sm-10">
-			  <button type="submit" class="btn btn-success">Editar</button>
+			  <button type="submit" class="btn btn-danger">Editar</button>
 			</div>
 		  </div>
 		</form>

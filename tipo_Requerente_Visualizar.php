@@ -58,7 +58,17 @@ include_once("conexao.php");
 				
 			<div>
 				<b>Tipo de Entidade:</b>
-				<?php echo $resultado['Tipo_Entidade']; ?>
+				<?php
+					$interna = "Interna";
+					$externa = "Externa";
+					if($resultado['Tipo_Entidade'] == 1){
+						echo "<td>".$interna. "</td>";
+					}else{
+						echo "<td>".$externa."</td>";
+					}
+
+				?>
+				
 			</div>
 			<br>
 			<div>

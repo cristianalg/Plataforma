@@ -51,8 +51,10 @@ include_once("conexao.php");
 		  <div class="form-group">
 			<label for="inputEmail3" class="col-sm-2 control-label">Tipo de Entidade</label>
 			<div class="col-sm-10">
-			  <input type="text" class="form-control" name="tipo_entidade" placeholder="Interna / Externa" value="<?php echo $resultado['Tipo_Entidade']; ?>">
-			</div>
+			<input type="radio" name="tipo_entidade" value="1" <?php if($resultado['Tipo_Entidade'] == 1){ echo "checked";}?> />Interna &nbsp &nbsp
+			<input type="radio" name="tipo_entidade" value="0" <?php if($resultado['Tipo_Entidade'] == 0){ echo "checked";}?>/>Externa
+			
+		</div>
 		  </div>
 		  
 		  
@@ -74,7 +76,7 @@ include_once("conexao.php");
 		  <input type="hidden" name="numeroid" value="<?php echo $resultado['idTipo_Requerente']; ?>">
 		  <div class="form-group">
 			<div class="col-sm-offset-2 col-sm-10">
-			  <button type="submit" class="btn btn-success">Editar</button>
+			  <button type="submit" class="btn btn-danger">Editar</button>
 			</div>
 		  </div>
 		</form>

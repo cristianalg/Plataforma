@@ -66,7 +66,7 @@ include_once("conexao.php");
 						while($dados = mysql_fetch_assoc($resultado)){
 							#preencher o select com dados
 							?>
-								<option value="<?php echo $dados["idtipo_requerente"]; ?>"><?php echo $dados["Nome_Tipo_Requerente"];?></option>
+								<option value="<?php echo $dados["idtipo_requerente"];?>"><?php echo $dados["Nome_Tipo_Requerente"]; ?></option>
 							<?php
 						}
 					?>

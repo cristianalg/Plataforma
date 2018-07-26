@@ -8,7 +8,7 @@ $tipo_entidade					= $_POST["tipo_entidade"];
 $observacao_tipo_requerente 	= $_POST["observacao_tipo_requerente"];
 
 
-if($nome_tipo_requerente == "" || $tipo_entidade == "")
+if($nome_tipo_requerente == "")
 {
 	echo "<script language='javascript' type='text/javascript' text-align:'center' > 
 		alert('Os campos com (*) são de preenchimento obrigatório.'); ";

@@ -51,7 +51,16 @@ include_once("menu_Pagina_Inicial.php");
 						echo "<tr>";
 							echo "<td>".$linhas['idTipo_Requerente']."</td>";
 							echo "<td>".$linhas['Nome_Tipo_Requerente']."</td>";
-							echo "<td>".$linhas['Tipo_Entidade']."</td>";
+						//	echo "<td>".$linhas['Tipo_Entidade']."</td>";
+							
+							$interna = "Interna";
+							$externa = "Externa";
+							if($linhas['Tipo_Entidade'] == 1){
+								echo "<td>".$interna. "</td>";
+							}else{
+								echo "<td>".$externa."</td>";
+							}
+							
 							?>
 							
 							<td> 

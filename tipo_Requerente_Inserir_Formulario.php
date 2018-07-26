@@ -48,16 +48,16 @@ include_once("seguranca.php");
 				</div>
 			  </div>
 		 
-			   <div class="form-group">
-			<label for="inputPassword3" class="col-sm-2 control-label">Tipo de Entidade<font color="red" size="4">&nbsp*</font></label>
-			<div class="col-sm-10">
-			  <select class="form-control" name="tipo_entidade">
-				  <option value="Interna">Interna</option>
-				  <option value="Externa">Externa</option>
-				</select>
-			</div>
+		  <div class="form-group">
+		<label class="col-sm-2 control-label">&nbsp &nbsp Tipo de Entidade<font color="red" size="4">&nbsp* &nbsp &nbsp </font></label>
+		<div class="col-sm-10">
+			<!--************Elaboração dos Cartazes alusivos ao evento*********************-->
+			
+			<input type="radio" name="tipo_entidade" value="1"  checked="true"/>Interna &nbsp &nbsp
+			<input type="radio" name="tipo_entidade" value="0"/>Externa
 		  </div>
-		  </br></br>
+		  </div>
+		 
 			
 			    <div class="form-group">
 				<label for="inputPassword3" class="col-sm-2 control-label">Observação</label>
