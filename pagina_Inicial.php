@@ -1,6 +1,9 @@
 <?php
 session_start(); //cria uma sessão ou resume a sessão atual baseado num id de sessão passado via POST
 include_once("seguranca.php");
+include_once("conexao.php");
+$query ="SELECT * FROM assistencia_tecnica WHERE Estado_idEstado !=3 ORDER BY idAssistencia_Tecnica DESC";  
+$resultado = mysql_query($query);  
 ?>
 <!DOCTYPE html>
 <html lang="pt-pt">
@@ -24,32 +27,73 @@ include_once("seguranca.php");
 	?>	
  
 
-
+	<div class="container">  
+            <div>
+			<!--<div class="page-header">-->
+				<h1><i>Assistências Técnicas Pendentes</i></h1>
+			</div> 
+			<br><br>
+            <div class="table-responsive">  
+                <table id="tecnico_data" class="table table-striped table-bordered">  
+                     <thead>  
+                         <tr>  
+							<th>ID</th>
+							<th>Data</th>
+							<th>Assistência</th>
+							<th>Descrição da avaria</th>
+							<th>Estado</th>
+							<th>Requerente</th>
+							<th>Ações</th>
+                        </tr>  
+                    </thead>  
+					
+				  <?php 
+				  
+					while($linhas = mysql_fetch_array($resultado)){
+						echo "<tr>";
+							echo "<td>".$linhas['idAssistencia_Tecnica']."</td>";
+							echo "<td>".$linhas['Data_Pedido']."</td>";
+							
+							//Tipo_Assistencia
+							$result_cat =mysql_query(" SELECT Nome_Tipo_Assistencia FROM tipo_assistencia INNER JOIN 
+							assistencia_tecnica ON tipo_assistencia.idTipo_Assistencia = assistencia_tecnica.Tipo_Assistencia_idTipo_Assistencia
+							where assistencia_tecnica.idAssistencia_Tecnica =".$linhas['idAssistencia_Tecnica'].";");
+							while($dados = mysql_fetch_assoc($result_cat)){
+								echo "<td>".$dados['Nome_Tipo_Assistencia']."</td>";
+							}
+							
+							echo "<td>".$linhas['Descricao_Avaria']."</td>";
+							
+							//Estado da assistencia
+							$result_cat =mysql_query("SELECT Nome_Estado_Assistencia FROM estado INNER JOIN 
+							assistencia_tecnica ON estado.idEstado = assistencia_tecnica.Estado_idEstado 
+							where assistencia_tecnica.idAssistencia_Tecnica = ".$linhas['idAssistencia_Tecnica'].";");
+							while($dados = mysql_fetch_assoc($result_cat)){
+								echo "<td>".$dados['Nome_Estado_Assistencia']."</td>";
+							}
+							//nome de requerente
+							$result_cat =mysql_query("SELECT Nome_Requerente FROM requerente INNER JOIN 
+							assistencia_tecnica ON requerente.idRequerente = assistencia_tecnica.Requerente_idRequerente 
+							where assistencia_tecnica.idAssistencia_Tecnica = ".$linhas['idAssistencia_Tecnica'].";");
+							while($dados = mysql_fetch_assoc($result_cat)){
+								echo "<td>".$dados['Nome_Requerente']."</td>";
+							}
+						?>
+							
+							<td>
+							<a href='assistencia_Tecnica_Visualizar.php?id=<?php echo $linhas['idAssistencia_Tecnica']; ?>'><img src='imagens/info.ico' width='30px'></a>
+							<a href='assistencia_Tecnica_Editar_Formulario.php?id=<?php echo $linhas['idAssistencia_Tecnica']; ?>'><img src='imagens/edit.ico' width='30px'></a>
+							<a href="#" onclick="javascript: if (confirm('Deseja remover este registo?'))location.href='assistencia_Tecnica_Eliminar.php?id=<?php echo $linhas['idAssistencia_Tecnica']; ?>'"><img src='imagens/edit_delete.png' width='30px'></a>
+							<?php
+						echo "</tr>";
+					}
+				?>
+                     </table>  
+                </div>  
+           </div>  
 	
-	<div class="container theme-showcase" role="main">      
-		<div class="page-header">
-			<h1>Bem vindo a área administrativa</h1>
-    </div>
 	
-    <div class="row">
-		<div class="col-md-12">
-			<form class="form-horizontal" method="POST" action="gerarPDF.php" role="form" enctype="multipart/form-data"> 
-			
-			
-				<div class="form-group">
-					<div class="col-sm-offset-2 col-sm-10">
-					  <button type="submit" class="btn btn-success">Gerar PDF</button>
-					</div>
-			  </div>
-			
-			</form>
-		</div>
-	</div>	<!-- /container -->	  
-			
-			
-	
-	
-	
+	  </body>
 	
     <!-- Bootstrap core JavaScript
     ================================================== -->
@@ -59,5 +103,24 @@ include_once("seguranca.php");
     <script src="js/docs.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="js/ie10-viewport-bug-workaround.js"></script>
-  </body>
-</html>
+
+
+	
+	<!-- Script do spinner
+    ================================================== -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>  
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />  
+	<script src="js/spinner.js"></script>
+	<script src="js/spinner_Function.js"></script>
+	<!--<script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>  
+	<script src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js"></script>    -->        
+	<link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css" />  
+	
+ </html>
+ 
+ <!-- Script da função do spinner-->
+ <script>  
+ $(document).ready(function(){  
+      $('#tecnico_data').DataTable();  
+ });  
+ </script>  

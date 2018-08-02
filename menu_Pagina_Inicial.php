@@ -54,7 +54,7 @@ html, body {height:100%;}
 		<li class="dropdown">
 		  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">TABELAS <span class="caret"></span></a>
 		  <ul class="dropdown-menu">
-			  <li><a href="tecnico_Listar.php">TÉCNICOS</a></li>
+			  <li><a href="tecnico_Listar.php">Técnicos</a></li>
 			  <li class="divider"></li>
 			  <li><b>&nbsp &nbsp  REQUERENTES</b></li> 
 			  <li><a href="tipo_Requerente_Listar.php">  &nbsp Tipo de requerente</a></li>
@@ -80,7 +80,7 @@ html, body {height:100%;}
 			  <li><a href="tipo_Assistencia_Listar.php"> Tipo de Assistências</a></li>
 			  <li><a href="estado_Assistencia_Listar.php">Estado das Assistências</a></li>
 			  <li><a href="assistencia_Tecnica_Listar.php"> Assistências Técnicas</a></li>
-			  <li><a href="assistencia_Tecnica_Imprimir_Listar.php"> Relatório de Atividades</a></li>			  
+			  <li><a href="relatorio_Atividades_Inserir_Formulario.php"> Relatório de Atividades</a></li>			  
 			</ul>
 		</li>
 		
@@ -101,10 +101,12 @@ html, body {height:100%;}
 		<li class="dropdown">
 		  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sistema <span class="caret"></span></a>
 		  <ul class="dropdown-menu">
-			<li><a href="software_Listar.php">SOFTWARE</a></li>     
-			<li><a href="sistema_Operativo_Listar.php">SISTEMA OPERATIVO</a></li>
-			<li><a href="office_Listar.php">OFFICE</a></li>
-			<li><a href="#">APLICATIVOS & AIRC</a></li>
+			<li><a href="software_Listar.php">Software</a></li>     
+			<li><a href="sistema_Operativo_Listar.php">Sistema Operativo</a></li>
+			<li><a href="office_Listar.php">Office</a></li>
+			<li><a href="AIRC_Listar.php">AIRC</a></li>
+			<li><a href="aplicativos_Listar.php">Aplicativos</a></li>
+			<li><a href="instalacao_Computadores_Listar.php">Instalação de Computadores</a></li>
 		  </ul>
 		</li>
 		
@@ -129,7 +131,7 @@ html, body {height:100%;}
   <!--Rodapé -->
 <div class="content">
 	<div class="footer">
-		<font class="footer text-left"  face="Brush Script">©Cristiana Gabriel</font>
+		<font class="footer text-left"  face="Brush Script">&copy; Cristiana Gabriel</font>
 		<font class="footer text-center" face="Brush Script">|| Projeto em Contexto de Estágio ||</font>
 		<font class="footer text-right" face="Brush Script">Engenharia Informática - IPG</font>
 	</div>
