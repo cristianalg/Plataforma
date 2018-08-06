@@ -98,7 +98,7 @@ include_once("seguranca.php");
 			  <div class="form-group">
 				<label for="inputPassword3" class="col-sm-2 control-label">Login<font color="red" size="4">&nbsp*</font></label>
 				<div class="col-sm-10">
-				  <input type="password" class="form-control" name="user" placeholder="@User" value="<?php if(isset($_POST["user"])){ echo $_POST["user"];} ?>">
+				  <input type="password" class="form-control" name="user" placeholder="@Username" value="<?php if(isset($_POST["user"])){ echo $_POST["user"];} ?>">
 				</div>
 			  </div>
 			  

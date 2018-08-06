@@ -44,7 +44,7 @@ include_once("seguranca.php");
 			  <div class="form-group">
 				<label for="inputEmail3" class="col-sm-2 control-label">Nome Departamento<font color="red" size="4">&nbsp*</font></label>
 				<div class="col-sm-10">
-				  <input type="text" class="form-control" name="nome_departamento" placeholder="nome_departamento" value="<?php if(isset($_POST["nome_departamento"])){ echo $_POST["nome_departamento"];} ?>">
+				  <input type="text" class="form-control" name="nome_departamento" placeholder="Nome do Departamento" value="<?php if(isset($_POST["nome_departamento"])){ echo $_POST["nome_departamento"];} ?>">
 				</div>
 			  </div>
 		 

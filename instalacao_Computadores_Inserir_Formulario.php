@@ -159,9 +159,11 @@ include_once("conexao.php");
 			</div>
 		  </div>
 		
+		<br>
 			<div class="form-group">
 			<label for="inputPassword3" class="col-sm-2 control-label">Office<font color="red" size="4">&nbsp*</font></label>
 			<div class="col-sm-10">
+			<p>No caso do office 2007 instalar - Save pdf e novo acordo ortográfico</p>
 			  <select class="form-control" name="idoffice">
 				 <option value="">Selecione o Office</option>
 				  <?php 
@@ -184,7 +186,7 @@ include_once("conexao.php");
 			<div class="form-group">
 				<label for="inputEmail3" class="col-sm-2 control-label">Aplicativos</label>
 				<div class="col-sm-10">
-				<p>Escolha os aplicativos instalados:</p>
+				<p>Marcar tudo o que for aplicável.</p>
 					<input type="checkbox" name="chkbox_Aplicativos[]" value="Adobe Reader"><label>&nbsp Adobe Reader</label> &nbsp &nbsp &nbsp
 					<input type="checkbox" name="chkbox_Aplicativos[]" value="7 ZIP"><label>&nbsp 7 ZIP</label>&nbsp &nbsp &nbsp
 					<input type="checkbox" name="chkbox_Aplicativos[]" value="Java"><label>&nbsp Java</label>&nbsp &nbsp &nbsp
@@ -198,6 +200,13 @@ include_once("conexao.php");
 		 	<div class="form-group">
 				<label for="inputEmail3" class="col-sm-2 control-label">AIRC</label>
 				<div class="col-sm-10">
+				<p>
+					Consultar AIRC - Definições em \\\192.168.1.151\publico\UTILITARIOS\airc\inst aplic
+					AIRC\ | Para EXPORTAR PARA PDF (instalar o ghost script - no 64 bits instalar
+					primeiro o 32 bits e depois o 64 bits e finalmente executar o ficheiro anexado na
+					pasta ghost)
+				</p><p>Marcar tudo o que for aplicável.</p>
+				
 					<input type="checkbox" name="chkbox[]" value="Guias de Receita Gerais"><label>&nbsp Guias de Receita Gerais</label>&nbsp &nbsp &nbsp
 					<input type="checkbox" name="chkbox[]" value="Gestão de Mercados"><label>&nbsp Gestão de Mercados</label>&nbsp &nbsp &nbsp
 					<input type="checkbox" name="chkbox[]" value="Gestão de Publicidade"><label>&nbsp Gestão de Publicidade</label>&nbsp &nbsp &nbsp

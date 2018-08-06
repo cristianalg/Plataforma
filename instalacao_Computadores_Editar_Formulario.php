@@ -173,61 +173,40 @@ $checkboxvalues_AIRC =  explode(",", $list_AIRC[0]["AIRC"]);
 			</div>
 		  </div>
 		  
+		  <br>
 		  <div class="form-group">
 			<label for="inputEmail3" class="col-sm-2 control-label"> Impressora Follow Me</label>
 			<div class="col-sm-10">
-				<input type="radio" name="impressora" value="1" <?php if($resultado['Impressora'] == 1){ echo "checked";}?>/>Sim &nbsp &nbsp
-				<input type="radio" name="impressora" value="0" <?php if($resultado['Impressora'] == 0){ echo "checked";}?>/>Não
+			<p><b>1 - </b>Instalar impressora com ip 192.168.1.237 com base nos drivers da ineo +224e
+					em: \\192.168.1.151\publico\UTILITARIOS\gestão de utilizadores equipamentos
+					multifunções\drivers equip develop\ </p> 
+				<p> <b>2 -</b> Instalar safe q em: \\192.168.1.151\publico\UTILITARIOS\SafeQ\ </p>
+				<p><b>3 -</b> Nas preferências alterar o seguinte: <b>a)</b> colocar um lado por defeito <b>b)</b> Colocar preto e branco por defeito.</p>
+				<p>Marcar tudo o que for aplicável. </p>
+				<font size="3">
+					<input type="radio" name="impressora" value="1" <?php if($resultado['Impressora'] == 1){ echo "checked";}?>/>Sim &nbsp &nbsp
+					<input type="radio" name="impressora" value="0" <?php if($resultado['Impressora'] == 0){ echo "checked";}?>/>Não
+				</font>
 			</div>
 		</div>
 		
 		<div class="form-group">
 			<label for="inputEmail3" class="col-sm-2 control-label">Antivirus</label>
 			<div class="col-sm-10">
-				<input type="radio" name="antivirus" value="1" <?php if($resultado['Antivirus'] == 1){ echo "checked";}?>/>Sim &nbsp &nbsp
-				<input type="radio" name="antivirus" value="0" <?php if($resultado['Antivirus'] == 0){ echo "checked";}?>/>Não
+					<p>ACEDER AO WEBSITE DO ANTIVIRUS <a href="https://wfbs-svc-emea.trendmicro.com/">https://wfbs-svc-emea.trendmicro.com/</a> com
+					nome de utilizador Mcbeira e palavra passe de segurança definida na informática
+					com maiúscula no inicio.</p>
+				<p>Marcar tudo o que for aplicável.</p>
+				<font size="3">
+					<input type="radio" name="antivirus" value="1" <?php if($resultado['Antivirus'] == 1){ echo "checked";}?>/>Sim &nbsp &nbsp
+					<input type="radio" name="antivirus" value="0" <?php if($resultado['Antivirus'] == 0){ echo "checked";}?>/>Não
+				</font>
 			</div>
 		</div>
 	    
 
 
-		<div class="form-group">
-				<label for="inputEmail3" class="col-sm-2 control-label">Aplicativos</label>
-				<div class="col-sm-10">			
-				<input type="checkbox" id="Country" name="Country[]" <?php echo $checkedValue; ?> value="Adobe Reader">&nbsp Adobe Reader &nbsp &nbsp &nbsp
-					<input type="checkbox" id="Country" name="Country[]" <?php echo $checkedValue1; ?> value="7 ZIP">&nbsp 7 ZIP &nbsp &nbsp &nbsp
-					<input type="checkbox" id="Country" name="Country[]" <?php echo $checkedValue2; ?> value="Java">&nbsp Java &nbsp &nbsp &nbsp
-					<input type="checkbox" id="Country" name="Country[]" <?php echo $checkedValue3; ?> value="Google Chrome">&nbsp Google Chrome &nbsp &nbsp &nbsp
-					<input type="checkbox" id="Country" name="Country[]" <?php echo $checkedValue4; ?> value="Mozilla Firefox">&nbsp Mozilla Firefox &nbsp &nbsp &nbsp
-					<input type="checkbox" id="Country" name="Country[]" <?php echo $checkedValue5; ?> value="Opera Browser">&nbsp Opera Browser &nbsp &nbsp &nbsp
-				</div>
-			</div>
-			
-
-	  
-			<div class="form-group">
-				<label for="inputEmail3" class="col-sm-2 control-label">AIRC</label>
-				<div class="col-sm-10">
-					<input type="checkbox" id="chkbox" name="chkbox[]" 	<?php echo $checkedValue_AIRC; ?>		value="Guias de Receita Gerais"> &nbsp Guias de Receita Gerais &nbsp &nbsp &nbsp
-					<input type="checkbox" id="chkbox" name="chkbox[]" 	<?php echo $checkedValue_AIRC1; ?> 		value="Gestão de Mercados"> &nbsp Gestão de Mercados &nbsp &nbsp &nbsp
-					<input type="checkbox" id="chkbox" name="chkbox[]"	<?php echo $checkedValue_AIRC2; ?>		value="Gestão de Publicidade"> &nbsp Gestão de Publicidade &nbsp &nbsp &nbsp
-					<input type="checkbox" id="chkbox" name="chkbox[]" 	<?php echo $checkedValue_AIRC3; ?>		value="Obras por Administração Directa"> &nbsp Obras por Administração Directa &nbsp &nbsp &nbsp </br>
-					<input type="checkbox" id="chkbox" name="chkbox[]" 	<?php echo $checkedValue_AIRC4; ?>		value="Sistema de Tratamento de Actas"> &nbsp Sistema de Tratamento de Actas &nbsp &nbsp &nbsp
-					<input type="checkbox" id="chkbox" name="chkbox[]" 	<?php echo $checkedValue_AIRC5; ?> 		value="Sistema de Beneficiários da ADSE"> &nbsp Sistema de Beneficiários da ADSE &nbsp &nbsp &nbsp
-					<input type="checkbox" id="chkbox" name="chkbox[]" 	<?php echo $checkedValue_AIRC6; ?> 		value="Sistema de Avaliação de Desempenho"> &nbsp Sistema de Avaliação de Desempenho &nbsp &nbsp &nbsp </br>
-					<input type="checkbox" id="chkbox" name="chkbox[]" 	<?php echo $checkedValue_AIRC7; ?> 		value="Gestão de Tesouraria"> &nbsp Gestão de Tesouraria &nbsp &nbsp &nbsp
-					<input type="checkbox" id="chkbox" name="chkbox[]" 	<?php echo $checkedValue_AIRC8; ?> 		value="Sistema de Controlo de Empreitadas"> &nbsp Sistema de Controlo de Empreitadas &nbsp &nbsp &nbsp
-					<input type="checkbox" id="chkbox"  name="chkbox[]" <?php echo $checkedValue_AIRC9; ?> 		value="Gestão Documental Registo de Correspondência"> &nbsp Gestão Documental Registo de Correspondência &nbsp &nbsp &nbsp </br>
-					<input type="checkbox" id="chkbox"  name="chkbox[]" <?php echo $checkedValue_AIRC10; ?> 	value="Sistema de Inventário e Cadastro Patrimonial"> &nbsp Sistema de Inventário e Cadastro Patrimonial &nbsp &nbsp &nbsp
-					<input type="checkbox" id="chkbox" name="chkbox[]"	<?php echo $checkedValue_AIRC11; ?> 	value="Gestão de Stocks"> &nbsp  Gestão de Stocks &nbsp &nbsp &nbsp
-					<input type="checkbox" id="chkbox" name="chkbox[]" 	<?php echo $checkedValue_AIRC12; ?> 	value="Gestão de Pessoal"> &nbsp Gestão de Pessoal &nbsp &nbsp &nbsp 
-					<input type="checkbox" id="chkbox" name="chkbox[]" 	<?php echo $checkedValue_AIRC13; ?> 	value="Sistema de Gestão de Água"> &nbsp Sistema de Gestão de Água &nbsp &nbsp &nbsp </br>
-					<input type="checkbox" id="chkbox" name="chkbox[]" 	<?php echo $checkedValue_AIRC14; ?>		value="Sistema de Contabilidade Autárquica"> &nbsp Sistema de Contabilidade Autárquica &nbsp &nbsp &nbsp
-					<input type="checkbox" id="chkbox" name="chkbox[]" 	<?php echo $checkedValue_AIRC15; ?>		value="Sistema de Processos de Obras"> &nbsp Sistema de Processos de Obras&nbsp &nbsp &nbsp
-					<input type="checkbox" id="chkbox" name="chkbox[]"	<?php echo $checkedValue_AIRC16; ?> 	value="Administração de Aplicações AIRC"> &nbsp Administração de Aplicações AIRC &nbsp &nbsp &nbsp
-				</div>
-			</div>
-
+		<br>
 			<?php $sistemaFK_id = $resultado['Sistema_Operativo_idSistema_Operativo'];?>
 		<div class="form-group">
 			<label for="inputEmail3" class="col-sm-2 control-label">Sistema Operativo</label>
@@ -248,11 +227,12 @@ $checkboxvalues_AIRC =  explode(",", $list_AIRC[0]["AIRC"]);
 			</div>
 		</div> 
 		
-				
+		<br>
 		<?php $officeFK_id = $resultado['Office_idOffice'];?>
 		<div class="form-group">
-			<label for="inputEmail3" class="col-sm-2 control-label">Sistema Operativo</label>
+			<label for="inputEmail3" class="col-sm-2 control-label">Office</label>
 			<div class="col-sm-10">
+			<p>No caso do office 2007 instalar - Save pdf e novo acordo ortográfico</p>
 			<select class="form-control" name="idoffice">
 				<?php 
 						$result =mysql_query("SELECT idOffice, Nome_Office  FROM office");
@@ -269,7 +249,51 @@ $checkboxvalues_AIRC =  explode(",", $list_AIRC[0]["AIRC"]);
 			</div>
 		</div> 
 	    
-		
+		<br>
+		<div class="form-group">
+				<label for="inputEmail3" class="col-sm-2 control-label">Aplicativos</label>
+				<div class="col-sm-10">	
+				<p>Marcar tudo o que for aplicável.</p>				
+				<input type="checkbox" id="Country" name="Country[]" <?php echo $checkedValue; ?> value="Adobe Reader"><label>&nbsp Adobe Reader &nbsp &nbsp &nbsp </label>
+					<input type="checkbox" id="Country" name="Country[]" <?php echo $checkedValue1; ?> value="7 ZIP"><label>&nbsp 7 ZIP &nbsp &nbsp &nbsp </label>
+					<input type="checkbox" id="Country" name="Country[]" <?php echo $checkedValue2; ?> value="Java"><label>&nbsp Java &nbsp &nbsp &nbsp </label>
+					<input type="checkbox" id="Country" name="Country[]" <?php echo $checkedValue3; ?> value="Google Chrome"><label>&nbsp Google Chrome &nbsp &nbsp &nbsp </label>
+					<input type="checkbox" id="Country" name="Country[]" <?php echo $checkedValue4; ?> value="Mozilla Firefox"><label>&nbsp Mozilla Firefox &nbsp &nbsp &nbsp </label>
+					<input type="checkbox" id="Country" name="Country[]" <?php echo $checkedValue5; ?> value="Opera Browser"><label>&nbsp Opera Browser &nbsp &nbsp &nbsp </label>
+				</div>
+			</div>
+			
+
+	  
+			<div class="form-group">
+				<label for="inputEmail3" class="col-sm-2 control-label">AIRC</label>
+				<div class="col-sm-10">
+				<p>
+					Consultar AIRC - Definições em \\\192.168.1.151\publico\UTILITARIOS\airc\inst aplic
+					AIRC\ | Para EXPORTAR PARA PDF (instalar o ghost script - no 64 bits instalar
+					primeiro o 32 bits e depois o 64 bits e finalmente executar o ficheiro anexado na
+					pasta ghost)
+				</p><p>Marcar tudo o que for aplicável.</p>
+					<input type="checkbox" id="chkbox" name="chkbox[]" 	<?php echo $checkedValue_AIRC; ?>		value="Guias de Receita Gerais"><label> &nbsp Guias de Receita Gerais &nbsp &nbsp &nbsp </label>
+					<input type="checkbox" id="chkbox" name="chkbox[]" 	<?php echo $checkedValue_AIRC1; ?> 		value="Gestão de Mercados"><label> &nbsp Gestão de Mercados &nbsp &nbsp &nbsp </label>
+					<input type="checkbox" id="chkbox" name="chkbox[]"	<?php echo $checkedValue_AIRC2; ?>		value="Gestão de Publicidade"><label> &nbsp Gestão de Publicidade &nbsp &nbsp &nbsp </label>
+					<input type="checkbox" id="chkbox" name="chkbox[]" 	<?php echo $checkedValue_AIRC3; ?>		value="Obras por Administração Directa"><label> &nbsp Obras por Administração Directa &nbsp &nbsp &nbsp </label> </br>
+					<input type="checkbox" id="chkbox" name="chkbox[]" 	<?php echo $checkedValue_AIRC4; ?>		value="Sistema de Tratamento de Actas"><label> &nbsp Sistema de Tratamento de Actas &nbsp &nbsp &nbsp </label>
+					<input type="checkbox" id="chkbox" name="chkbox[]" 	<?php echo $checkedValue_AIRC5; ?> 		value="Sistema de Beneficiários da ADSE"><label> &nbsp Sistema de Beneficiários da ADSE &nbsp &nbsp &nbsp </label>
+					<input type="checkbox" id="chkbox" name="chkbox[]" 	<?php echo $checkedValue_AIRC6; ?> 		value="Sistema de Avaliação de Desempenho"><label> &nbsp Sistema de Avaliação de Desempenho &nbsp &nbsp &nbsp </label> </br>
+					<input type="checkbox" id="chkbox" name="chkbox[]" 	<?php echo $checkedValue_AIRC7; ?> 		value="Gestão de Tesouraria"><label> &nbsp Gestão de Tesouraria &nbsp &nbsp &nbsp </label>
+					<input type="checkbox" id="chkbox" name="chkbox[]" 	<?php echo $checkedValue_AIRC8; ?> 		value="Sistema de Controlo de Empreitadas"><label> &nbsp Sistema de Controlo de Empreitadas &nbsp &nbsp &nbsp </label>
+					<input type="checkbox" id="chkbox"  name="chkbox[]" <?php echo $checkedValue_AIRC9; ?> 		value="Gestão Documental Registo de Correspondência"><label> &nbsp Gestão Documental Registo de Correspondência &nbsp &nbsp &nbsp </label> </br>
+					<input type="checkbox" id="chkbox"  name="chkbox[]" <?php echo $checkedValue_AIRC10; ?> 	value="Sistema de Inventário e Cadastro Patrimonial"><label> &nbsp Sistema de Inventário e Cadastro Patrimonial &nbsp &nbsp &nbsp </label>
+					<input type="checkbox" id="chkbox" name="chkbox[]"	<?php echo $checkedValue_AIRC11; ?> 	value="Gestão de Stocks"><label> &nbsp  Gestão de Stocks &nbsp &nbsp &nbsp </label>
+					<input type="checkbox" id="chkbox" name="chkbox[]" 	<?php echo $checkedValue_AIRC12; ?> 	value="Gestão de Pessoal"><label> &nbsp Gestão de Pessoal &nbsp &nbsp &nbsp  </label>
+					<input type="checkbox" id="chkbox" name="chkbox[]" 	<?php echo $checkedValue_AIRC13; ?> 	value="Sistema de Gestão de Água"><label> &nbsp Sistema de Gestão de Água &nbsp &nbsp &nbsp </label> </br>
+					<input type="checkbox" id="chkbox" name="chkbox[]" 	<?php echo $checkedValue_AIRC14; ?>		value="Sistema de Contabilidade Autárquica"><label> &nbsp Sistema de Contabilidade Autárquica &nbsp &nbsp &nbsp </label>
+					<input type="checkbox" id="chkbox" name="chkbox[]" 	<?php echo $checkedValue_AIRC15; ?>		value="Sistema de Processos de Obras"><label> &nbsp Sistema de Processos de Obras&nbsp &nbsp &nbsp </label>
+					<input type="checkbox" id="chkbox" name="chkbox[]"	<?php echo $checkedValue_AIRC16; ?> 	value="Administração de Aplicações AIRC"><label> &nbsp Administração de Aplicações AIRC &nbsp &nbsp &nbsp </label>
+				</div>
+			</div>
+			
 			<?php $estadoFK_id = $resultado['Estado_idEstado'];?>
 		<div class="form-group">
 			<label for="inputEmail3" class="col-sm-2 control-label">Estado</label>

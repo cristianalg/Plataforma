@@ -18,12 +18,73 @@
   </head>
 
   <style type="text/css" media="screen">
+
+
+//background que se adapta a qualquer resolução de tela.
+ <!--
+ *  {
+	margin:0;
+	padding:0;
+}
+
+body {
+	height:100%;
+	width:100%;
+	background-image: url("imagens/alterada.jpg");
+	background-repeat: no-repeat;
+	-moz-background-size: 100% 100%;
+	-webkit-background-size: 100% 100%;
+	background-size: 100% 100%;
+	color:white;
+
+}
+-->
+
+
 *  {
 	margin:0;
 	padding:0;
 }
 
-html, body {height:100%;}
+html, body {
+		height:100%;
+		width:100%;
+		background-image: url("imagens/background.jpg"); 
+		background-attachment: fixed;
+		background-repeat: no-repeat;
+		background-position: center;   
+		color:white;
+
+} 
+
+
+<!--
+		background-image: url("imagens/alterada1.jpg"); 
+		background-attachment: fixed;
+		background-repeat: no-repeat;
+		background-position: center;   
+		color:white;
+
+body {
+    margin: 0;
+}
+.intro {
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    padding: 0;
+    text-align: center;
+    color: white;
+    background: url("imagens/castelo.jpg") no-repeat bottom center scroll;
+    background-color: black;
+    -webkit-background-size: contain;
+    -moz-background-size: contain;
+    background-size: contain;
+    -o-background-size: contain;
+}
+-->
+ 
+
 
 .geral {
 	min-height:100%;
@@ -62,14 +123,16 @@ html, body {height:100%;}
 		&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
 		<img class="form-signin-heading text-center" src="imagens/Celorico_Logo_150.png">
         <!--<h4 class="form-signin-heading text-center">Câmara Municipal Celorico da Beira</h4> -->
-		<p><font face="verdana" class="form-signin-heading text-center" size="3">Câmara Municipal Celorico da Beira</font></p>
+		<p><font face="verdana" class="form-signin-heading text-center" size="3">&nbsp &nbsp Município de Celorico da Beira</font></p>
+		
+		<br>
         <label for="inputEmail" class="sr-only">Utilizador</label>
 		
         <input type="text" name="utilizador" class="form-control" placeholder="Utilizador" required autofocus><br />
 		
         <label for="inputPassword" class="sr-only">Password</label>
         <input type="password" name="password" class="form-control" placeholder="Password" required >
-        
+		
 		<!--<button class="btn btn-secondary my-2 my-sm-0"  type="submit">Login</button>
 		<button type="button" class="btn btn-primary">Login</button> -->
         <button class="btn btn btn-primary btn-block" type="submit">Login</button>

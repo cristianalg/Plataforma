@@ -73,7 +73,7 @@ include_once("seguranca.php");
 			  
 			  
 			<div class="form-group">
-				<label for="inputEmail3" class="col-sm-2 control-label">Anexo</label>
+				<label for="inputEmail3" class="col-sm-2 control-label">Anexo (jpg,png)</label>
 				<div class="col-sm-10">
 					<!--<input name="arquivo" type="file"/>	-->
 					<input type="file" name="foto" />

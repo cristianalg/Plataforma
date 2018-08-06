@@ -218,14 +218,14 @@ include_once("conexao.php");
 			   
 
 			<div class="form-group">
-				<label for="inputEmail3" class="col-sm-2 control-label">Cópia da Fatura</label>
+				<label for="inputEmail3" class="col-sm-2 control-label">Cópia da Fatura (PDF)</label>
 				<div class="col-sm-10">
 					<input type="file" name="copia_fatura" id="copia_fatura" accept="application/pdf" />
 				</div>
 			</div>
 			
 			<div class="form-group">
-				<label for="inputEmail3" class="col-sm-2 control-label">Ficheiro de Configuração</label>
+				<label for="inputEmail3" class="col-sm-2 control-label">Ficheiro de Configuração (ZIP)</label>
 				<div class="col-sm-10">
 					<input type="file" name="ficheiro_configuracao" />
 				</div>

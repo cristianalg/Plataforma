@@ -70,10 +70,6 @@ html, body {height:100%;}
 		  </ul>
 		</li>
 	
-	
-	
-	
-		
 		<li class="dropdown">
 			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Assistências Técnicas <span class="caret"></span></a>
 			<ul class="dropdown-menu">
@@ -87,14 +83,14 @@ html, body {height:100%;}
 		<li class="dropdown">
 		  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Requisição de Material<span class="caret"></span></a>
 		  <ul class="dropdown-menu">
-			<li><a href="requisicao_Material_Listar.php">Listar</a></li>             
+			<li><a href="requisicao_Material_Listar.php">Requisições</a></li>             
 		  </ul>
 		</li>
 		
 		<li class="dropdown">
 		  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Requerimentos<span class="caret"></span></a>
 		  <ul class="dropdown-menu">
-			<li><a href="requerimento_Listar.php">Listar</a></li>             
+			<li><a href="requerimento_Listar.php">Requerimentos</a></li>             
 		  </ul>
 		</li>
 		
@@ -104,21 +100,9 @@ html, body {height:100%;}
 			<li><a href="software_Listar.php">Software</a></li>     
 			<li><a href="sistema_Operativo_Listar.php">Sistema Operativo</a></li>
 			<li><a href="office_Listar.php">Office</a></li>
-			<li><a href="AIRC_Listar.php">AIRC</a></li>
-			<li><a href="aplicativos_Listar.php">Aplicativos</a></li>
 			<li><a href="instalacao_Computadores_Listar.php">Instalação de Computadores</a></li>
 		  </ul>
 		</li>
-		
-		<!--
-		<li class="dropdown">
-		  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Relatório Atividades<span class="caret"></span></a>
-		  <ul class="dropdown-menu">
-			<li><a href="assistencia_Tecnica_Imprimir_Listar.php">Listar</a></li>             
-		  </ul>
-		</li>
-		-->
-
 		 
 		<li><a href="sair.php"><img src="imagens/LOGOUT.png">&nbsp Sair</a></li> 
 		

@@ -120,7 +120,7 @@ include_once("conexao.php");
 			  
 			  
 			  <div class="form-group">
-				<label for="inputEmail3" class="col-sm-2 control-label">Anexo</label>
+				<label for="inputEmail3" class="col-sm-2 control-label">Anexo (jpg,png)</label>
 				<div class="col-sm-10">
 					<input type="file" name="anexo" id="anexo"/>
 				</div>

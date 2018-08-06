@@ -169,14 +169,14 @@ include_once("conexao.php");
 					   
 
 						<div class="form-group">
-							<label for="inputEmail3" class="col-sm-2 control-label">Cópia da Fatura</label>
+							<label for="inputEmail3" class="col-sm-2 control-label">Cópia da Fatura (PDF)</label>
 							<div class="col-sm-10">
 								<input type="file" name="copia_fatura" id="copia_fatura" accept="application/pdf" />
 							</div>
 						</div>
 						
 						<div class="form-group">
-							<label for="inputEmail3" class="col-sm-2 control-label">Contrato Protocolo</label>
+							<label for="inputEmail3" class="col-sm-2 control-label">Contrato Protocolo (PDF)</label>
 							<div class="col-sm-10">
 								<input type="file" name="contrato_protocolo" id="contrato_protocolo" accept="application/pdf"/>
 							</div>
