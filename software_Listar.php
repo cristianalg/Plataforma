@@ -30,7 +30,7 @@ include_once("menu_Pagina_Inicial.php");
 			<!--<div class="page-header">-->
 				<h1>Lista dos Sofware
 				&nbsp
-				<a href="software_Inserir_Formulario.php"><img src="imagens/add1.ico" width="30px"></a>
+				<a href="software_Inserir_Formulario.php"><img src="imagens/add1.ico" width="30px" title="Adicionar"></a>
 				</h1>
 			</div> 
             <div class="table-responsive">  
@@ -59,9 +59,9 @@ include_once("menu_Pagina_Inicial.php");
 							?>
 							
 							<td> 
-							<a href='software_Visualizar.php?id=<?php echo $linhas['idSoftware']; ?>'><img src='imagens/info.ico' width='30px'></a>
-							<a href='software_Editar_Formulario.php?id=<?php echo $linhas['idSoftware']; ?>'><img src='imagens/edit.ico' width='30px'></a>
-							<a href="#" onclick="javascript: if (confirm('Deseja remover este registo?'))location.href='software_Eliminar.php?id=<?php echo $linhas['idSoftware']; ?>'"><img src='imagens/edit_delete.png' width='30px'></a>
+							<a href='software_Visualizar.php?id=<?php echo $linhas['idSoftware']; ?>'><img src='imagens/info.ico' width='30px' title="Visualizar"></a>
+							<a href='software_Editar_Formulario.php?id=<?php echo $linhas['idSoftware']; ?>'><img src='imagens/edit.ico' width='30px' title="Editar"></a>
+							<a href="#" onclick="javascript: if (confirm('Deseja remover este registo?'))location.href='software_Eliminar.php?id=<?php echo $linhas['idSoftware']; ?>'"><img src='imagens/edit_delete.png' width='30px' title="Eliminar"></a>
 							<?php
 						echo "</tr>";
 					}

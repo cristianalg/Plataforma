@@ -35,9 +35,9 @@ include_once("conexao.php");
 	
 	 <div class="row">
 		<div class="pull-right">
-			<a href='sistema_Operativo_Listar.php'><img src="imagens/list.png" width="30px"></a>
-			<a href='sistema_Operativo_Editar_Formulario.php?id=<?php echo $resultado['idSistema_Operativo']; ?>'><img src="imagens/edit.ico" width="30px"></a>
-				<a href="#" onclick="javascript: if (confirm('Deseja remover este registo?'))location.href='sistema_Operativo_Eliminar.php?id=<?php echo $resultado['idSistema_Operativo']; ?>'"><img src='imagens/edit_delete.png' width='30px'></a>
+			<a href='sistema_Operativo_Listar.php'><img src="imagens/list.png" width="30px" title="Listar"></a>
+			<a href='sistema_Operativo_Editar_Formulario.php?id=<?php echo $resultado['idSistema_Operativo']; ?>'><img src="imagens/edit.ico" width="30px" title="Editar"></a>
+				<a href="#" onclick="javascript: if (confirm('Deseja remover este registo?'))location.href='sistema_Operativo_Eliminar.php?id=<?php echo $resultado['idSistema_Operativo']; ?>'"><img src='imagens/edit_delete.png' width='30px' title="Eliminar"></a>
 		</div>
 	</div> 
 	

@@ -43,7 +43,7 @@ include_once("menu_Pagina_Inicial.php");
 			<!--<div class="page-header">-->
 				<h1>Lista das Instalações de Computadores
 				&nbsp
-				<a href="instalacao_Computadores_Inserir_Formulario.php"><img src="imagens/add1.ico" width="30px"></a>
+				<a href="instalacao_Computadores_Inserir_Formulario.php"><img src="imagens/add1.ico" width="30px" title="Adicionar"></a>
 				</h1>
 			</div> 
             <div class="table-responsive">  
@@ -82,9 +82,9 @@ include_once("menu_Pagina_Inicial.php");
 						?>
 							
 							<td> 
-							<a href='instalacao_Computadores_Visualizar.php?id=<?php echo $linhas['idInstalacao_Computadores']; ?>'><img src='imagens/info.ico' width='30px'></a>
-							<a href='instalacao_Computadores_Editar_Formulario.php?id=<?php echo $linhas['idInstalacao_Computadores']; ?>'><img src='imagens/edit.ico' width='30px'></a>
-							<a href="#" onclick="javascript: if (confirm('Deseja remover este registo?'))location.href='instalacao_Computadores_Eliminar.php?id=<?php echo $linhas['idInstalacao_Computadores']; ?>'"><img src='imagens/edit_delete.png' width='30px'></a>
+							<a href='instalacao_Computadores_Visualizar.php?id=<?php echo $linhas['idInstalacao_Computadores']; ?>'><img src='imagens/info.ico' width='30px' title="Visualizar"></a>
+							<a href='instalacao_Computadores_Editar_Formulario.php?id=<?php echo $linhas['idInstalacao_Computadores']; ?>'><img src='imagens/edit.ico' width='30px' title="Editar"></a>
+							<a href="#" onclick="javascript: if (confirm('Deseja remover este registo?'))location.href='instalacao_Computadores_Eliminar.php?id=<?php echo $linhas['idInstalacao_Computadores']; ?>'"><img src='imagens/edit_delete.png' width='30px' title="Eliminar"></a>
 							<?php
 						echo "</tr>";
 					}

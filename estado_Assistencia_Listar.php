@@ -31,7 +31,7 @@ include_once("menu_Pagina_Inicial.php");
 			<!--<div class="page-header">-->
 				<h1>Estado das Assistências Técnicas
 				&nbsp
-				<a href="estado_Assistencia_Inserir_Formulario.php"><img src="imagens/add1.ico" width="30px"></a>
+				<a href="estado_Assistencia_Inserir_Formulario.php"><img src="imagens/add1.ico" width="30px" title="Adicionar"></a>
 				</h1>
 			</div> 
             <div class="table-responsive">  
@@ -53,9 +53,9 @@ include_once("menu_Pagina_Inicial.php");
 							?>
 							
 							<td> 
-							<a href='estado_Assistencia_Visualizar.php?id=<?php echo $linhas['idEstado']; ?>''><img src='imagens/info.ico' width='30px'></a>
-							<a href='estado_Assistencia_Editar_Formulario.php?id=<?php echo $linhas['idEstado']; ?>'><img src='imagens/edit.ico' width='30px'></a>
-							<a href="#" onclick="javascript: if (confirm('Deseja remover este registo?'))location.href='estado_Assistencia_Eliminar.php?id=<?php echo $linhas['idEstado']; ?>'"><img src='imagens/edit_delete.png' width='30px'></a>
+							<a href='estado_Assistencia_Visualizar.php?id=<?php echo $linhas['idEstado']; ?>''><img src='imagens/info.ico' width='30px' title="Visualizar"></a>
+							<a href='estado_Assistencia_Editar_Formulario.php?id=<?php echo $linhas['idEstado']; ?>'><img src='imagens/edit.ico' width='30px' title="Editar"></a>
+							<a href="#" onclick="javascript: if (confirm('Deseja remover este registo?'))location.href='estado_Assistencia_Eliminar.php?id=<?php echo $linhas['idEstado']; ?>'"><img src='imagens/edit_delete.png' width='30px' title="Eliminar"></a>
 							<?php
 						echo "</tr>";
 					}
